@@ -1,0 +1,15 @@
+---
+title: "01-core-concepts"
+author: "Rob Arbon"
+date: "05/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Getting to grips with R Markdown. This will provide students with the skills necessary to create an R Markdown file, which will ensure that study documents are reproducible and linked to analyses conducted in R in such a way that when the analyses are updated the document is automatically updated.
+
+
+

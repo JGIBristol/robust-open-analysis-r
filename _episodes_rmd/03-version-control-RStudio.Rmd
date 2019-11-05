@@ -1,0 +1,15 @@
+---
+title: "01-core-concepts"
+author: "Rob Arbon"
+date: "05/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Using GitHub for reproducible research. This will introduce students to the git version control system and GitHub service for analytical code. In addition to version control, students will learn about the best ways to make code accessible, interpretable and usable by others, including appropriate code structure, documentation and open source licensing.  
+
+
+

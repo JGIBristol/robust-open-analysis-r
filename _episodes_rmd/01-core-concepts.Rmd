@@ -1,0 +1,14 @@
+---
+title: "01-core-concepts"
+author: "Rob Arbon"
+date: "05/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Core concepts in reproducibility. This will cover basic elements that go wrong in common research practices (and that the skills covered in this workshop will help ameliorate), e.g. p-hacking, HARKing, FAIR principles, publication bias, power etc., and how they lead to bad science. Participants will identify and discuss how these issues affect their own research areas.
+
+
