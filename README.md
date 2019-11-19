@@ -23,7 +23,7 @@ Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%
 
 Current maintainers of this lesson are 
 
-* Natalie Thurlby ([@NatalieThurlby](https://github.com/NatalieThurlby)
+* Natalie Thurlby ([@NatalieThurlby](https://github.com/NatalieThurlby))
 * Rob Arbon ([@RobertArbon](https://github.com/robertarbon))
 
 We are currently looking for two more lesson maintainers, please contact Natalie if you'd like to get involved!
