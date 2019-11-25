@@ -1,13 +1,7 @@
 ---
 title: "Putting it all together"
-author: "Rob Arbon, Natalie Thurlby"
-date: "05/11/2019"
-output: html_document
+source: Rmd
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 Putting it together: Creating reproducible workflows. This will synthesize the other course elements and allow students to practice creating a reproducible workflow from start to finish, including using data repositories and linking these with R Markdown and Github to perform a reproducible analysis. This module will be practical and make use of publicly available datasets.
 
