@@ -171,6 +171,20 @@ The `Terminal` is the same as the console but for the `bash` language, try typin
 > {: .solution}
 {: .challenge}
 
+
+> ## History
+> The history pane shows you all the previous commands that have been run. 
+> Run the following command in the console: 
+> ~~~ 
+> y <- rbeta(10, 1, 2)
+> ~~~
+> {: .language-r}
+> Now use the History pane to transfer this (with one click) to the last line of `test.R`. 
+> > ## Solution
+> > Highlight the relevant line and then click `To Source`. 
+> {: .solution}
+{: .challenge}
+
 Two other great features are tab complete and multiline editing. 
 
 > ## Tab complete
@@ -200,11 +214,212 @@ know as we'll go through the debugger together.
 
 # RMarkdown
 
+RMarkdown is a powerful way of presenting your analysis in a way that's easy to code and easy to 
+read. 
+
+This lesson will draw heavily from the following excellent resources:
+
+> ## RMarkdown further reading
+> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
+> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+{: .callout}
+
+## What is it?
+
+**Markdown** is a simple language with minimal formatting features 
+that can be turned into HTML (i.e. webpages). i.e. write plain text and turn it into formatted text. 
+
+**RMarkdown** is a variant of Markdown which allows you to run code and print the output within the
+final document. It can be turned into HTML, pdfs and word documents as well. 
+
+## What's it good for?
+
+Consider your normal data analysis workflow. It's probably something like this:
+
+1. Do some data analysis. 
+2. Save plots in separate files and print results to screen or `.csv`. 
+2. Copy and paste results/charts into report.  
+
+If you need to update your analysis or data you have to painstakingly do 2- 3 again. In order to 
+reproduce the analysis you have to share the code *and* how you copied an pasted results into 
+the final report.
+
+With RMarkdown your workflow could be like this: 
+
+1. Write report in RMarkdown and insert analysis/numbers/charts where you need it. Then one-click to 
+publish. 
+
+If you need to update analysis, data, etc. Make changes and then one click to publish (again). 
+In order to reproduce the results just share the raw RMarkdown document. 
+
+An additional *major* benefit over writing documents in MS Word is that you can track changes with 
+version control, but more on that in episode 3. 
+
+RMarkdown can be used to author a wide variety of document types e.g. books, presentations,  journal 
+articles, websites, *this course*. 
 
 
+## RMarkdown file structure
+
+Create a new RMarkdown document by doing the following: 
+
+> ## Create an RMarkdown document
+> 1. Select `File` > `New File` > `R Markdown...`
+> 2. Select the  `Word` radio button. 
+> 3. Press `OK` when the `New RMarkdown` pane appears.  
+{: .challenge}
+
+RMarkdown requires some 'front matter' which is a collection of key/value pairs at the top of the 
+file which tells R how you want to process the output. The default front matter is : 
+
+~~~
+   ---
+   title: "Untitled"
+   author: "Rob Arbon"
+   date: "25/11/2019"
+   output: word_document
+   ---
+~~~
+{: .source}
+
+In order to create the final Word document you need to `knit` the document. This tells R to create 
+a document with the specified formatting and to run all the code and insert the relevant parts 
+into the document. The front matter above tells `R` to make a title ('Untitled')  and two subtitles 
+('Rob Arbon' and '25/11/2019') and create a Word document (as opposed to a PDF or a 
+web page). 
+
+> ## Knit your RMarkdown doc
+> 1. Click the `knit` button at the top of the RMarkdown document. 
+> 1. Save as 'test.Rmd'.
+> The Word document should pop up. If not search for it in a file browswer in the home directory
+> of the project. 
+{: .challenge}
+
+You can now proceed to insert your text and code.
+
+## Text syntax
+
+What follows is a non-comprehensive guide to Markdown syntax. 
+
+> hackmd.io 
+> If you want a real time feedback on what markdown looks like navigate to 
+> (hackmd.io)[hackmd.io] to try things out.  You'll need to scroll down to the bottom 
+> and click 'Use for free'.
+{: .callout}
 
 
+### Headings
+~~~
+    # Heading 1
+    ## Heading 2
+    ### Heading 3
+~~~
+{: .source}
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+### Lists
+
+Note - actual numbers don't matter, just have a number and a period `.`
+~~~
+    1. Item 1
+    1. Item 2
+        1. sub Item 1
+        3. sub Item 2
+    2. Item 3
+~~~
+{: .source}
+
+1. Item 1
+1. Item 2
+    1. sub Item 1
+    3. sub Item 2
+2. Item 3
+
+### Bullets
+
+~~~
+    * Item 1
+    * Item 2
+        * sub Item 1
+        * sub Item 2
+    * Item 3
+~~~
+{: .source}
+
+* Item 1
+* Item 2
+    * sub Item 1
+    * sub Item 2
+* Item 3
+
+### Links
+
+~~~
+[link text](www.google.com)
+~~~~
+{: .source}
+
+[link text](www.google.com)
+
+### Images 
+
+~~~~
+![very good science caption](../fig/verygoodscience-hex.png)
+~~~
+{: .source}
+
+![very good science caption](../fig/verygoodscience-hex.png)
+
+## Code chunks
+
+You can also include code in code  and the output of code in 'code chunks'.
+
+````markdown
+`r ''````{r}
+x <- rnorm(2)
+
+for(i in 1:length(x)){
+  print(x[[i]])
+}
+```
+````
+
+This prints the code and the result:
+```{r}
+x <- rnorm(2)
+
+for(i in 1:length(x)){
+  print(x[[i]])
+}
+```
 
 
+As you can tell from the example document we `knit`ed at the start you can also show plots:
+
+````markdown
+`r ''````{r}
+library(ggplot2)
+x <- rbeta(1000,5,2)
+y <- rbeta(1000,0.3, 0.3)
+ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
+}
+```
+````
+
+gives the following code and plot
+~~~
+library(ggplot2)
+x <- rbeta(1000,5,2)
+y <- rbeta(1000,0.3, 0.3)
+ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
+~~~
+{: .language-r}
+![beta correlation](../fig/beta_correlation.png)
 
 
+There's lots more that can be done with RMarkdown, please read the documentation to find out more. 
+You'll also have a chance to play around with it in episode 4. 
