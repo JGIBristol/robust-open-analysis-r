@@ -6,7 +6,7 @@ This repository contains the contents of the Robust and Open Analysis in R lesso
 You can view the deployed lesson resources [here](https://jean-golding-institute.github.io/robust-open-analysis-r/). 
 
 ## 23/11/19 Workshop
-You can view the deployed lesson resources at: [tinyurl.com/uob_roar](http://www.tinyurl.com/uob_roar)
+You can view the deployed lesson resources at: [tinyurl.com/uob-roar](http://www.tinyurl.com/uob-roar)
 
 You can look at the slides onlines here:
 * [Course Introduction](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
