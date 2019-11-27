@@ -5,28 +5,14 @@ date: "05/11/2019"
 output: html_document
 teaching: 45
 exercises: 25
-
 questions:
 - "What is the reproducibility crisis?"
-- "Why would we want to work reproducibly?"
 - "What are the key problems for reproducible research?"
 - "How can we solve these key problems in our research?"
 objectives:
-- "Describe the purpose and use of each pane in the RStudio IDE"
-- "Locate buttons and options in the RStudio IDE"
-- "Define a variable"
-- "Assign data to a variable"
-- "Manage a workspace in an interactive R session"
-- "Use mathematical and comparison operators"
-- "Call functions"
-- "Manage packages"
+- OBJECTIVES HERE, EG: "Describe the purpose and use of each pane in the RStudio IDE"
 keypoints:
-- "Use RStudio to write and run R programs."
-- "R has the usual arithmetic operators and mathematical functions."
-- "Use `<-` to assign values to variables."
-- "Use `ls()` to list the variables in a program."
-- "Use `rm()` to delete objects in a program."
-- "Use `install.packages()` to install packages (libraries)."
+- KEYPOINTS HERE, EG: "Use `ls()` to list the variables in a program."
 source: Rmd
 ---
 

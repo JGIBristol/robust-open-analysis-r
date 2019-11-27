@@ -1,15 +1,428 @@
 ---
 title: "Literate Programming with RMarkdown"
-author: "Rob Arbon, Natalie Thurlby"
-date: "05/11/2019"
-output: html_document
+teaching: 50
+exercises: 10
+questions:
+ - "What is an Integrated Development Environment (IDE) and how can it help me?"
+ - "What is literate programming and how can it be used for improving reproducibility?"
+objectives: 
+- "Show how RStudio can be used to improve your workflow."
+- "Explain how RMarkdown can create reproducible analysis documents."
+keypoints: 
+- "IDEs such as RStudio make coding and data analysis easier and more reproducible."
+- "Literate programming combines text and code to make readable code and reproducible documents"
+- "RMarkdown fascilitates literate programming and produces good looking documents in a variety of 
+ formats"
+source: Rmd
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+In this episode we will explore two technologies essential to efficient, reproducible workflows:
+* Integrated development environments (IDEs) and
+* Literate programming
+
+# Integrated development environments (IDEs)
+
+The goal of an IDE is to make coding and, for RStudio in particular, data analysis easier. 
+IDEs are often tailored to specific languages (or sets of languages) but there is a set of 
+features which is common to all.  These features are: 
+
+  * Project management
+  * Compiler or interpreter
+  * Debugger
+  * Version control
+  * Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
+  syntax highlighting, autocomplete...
+
+> ## Examples of IDEs
+>
+> * For `R` there is [RStudio](https://www.rstudio.com/) 
+> * For `Python` there is [PyCharm](https://www.jetbrains.com/pycharm/)
+> * For general purpose there is [Sublime Text](https://www.sublimetext.com/). 
+> * For data science applications the [Jupyter](http://jupyter.org/) project is powerful. 
+> 
+{: .callout}
+
+From now on we will be referencing RStudio as our IDE of choice.
+
+## Project management
+
+A good about RStudio is `Projects`. Let's create one now. 
+
+> ## Create a new project
+> 1. Open RStudio
+> 2. Select `File` > `New Project` > `New Directory` > `New Project` 
+> 3. `Directory name`: "roar_workshop"
+> 4. `Create project as...`: Select a convenient directory
+> 5. Check the `Create a git repository` radio button
+> 6. Select `Create Project`
+{: .challenge}
+
+`Projects` keep track of settings tied to a particular, er, project, that you're working on. When 
+you want to work on a new project, just open up that project and continue where you left off. 
+In order open an existing project navigate to the `[project_name].Rproj` file, either through 
+RStudio (`File` > `Open Project...`) or through your system file manager. 
+
+Before we tour Rstudio let's make sure we've all configured our session the same way. 
+
+> ## Rstudio set up
+> 1. Open `Tools` > `Global Options`
+> 2. Select the `Pane Layout` tab.  
+> 3. Configure your RStudio with the following layout: 
+>     1. Bottom left: `Console` and `Terminal`
+>     2. Top left: `Source`
+>     3. Top right: `Environment`, `History`, `VCS`
+>     4. Bottom right: `Files`, `Plots`, `Packages`, `Help`, `Viewer`
+> 4. Select `OK`
+{: .challenge}
+
+> ## Global vs Project properties. 
+> Pane layout is a 'Global property', that is, it will persist across different RStudio sessions.  
+> There are project specific properties in the `Tools` > `Project options...` menu. Please  
+> have a look at them!
+{: .callout}
+
+Now look at `Files` pane (bottom right). You should see two files: 
+
+1. `.gitignore` 
+2. `roar_workshop.Rproj` 
+
+Ignore the first one (for now). The `Rproj` is a text file which contains all of the project 
+specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen
+the project. 
+
+> ## Create a file, run, save, close and reopen
+> 1. Select `File` > `New File` > `New R Script` 
+> 2. Write out the following in the file (or just copy and paste!): 
+> 2. ~~~
+>    x <- rnorm(10)
+>    
+>    sum <- 0
+>    
+>    for(i in 1:length(x)){
+>        sum <- sum + x[[i]]
+>    }
+>    
+>    print(sum)    
+>    ~~~
+>    {: .language-r}
+> 3. Save the file as `test.R`
+> 4. `Source` the file so that it runs. 
+> 5. Observe the creation of the `sum` and `x` variables in the `Enivronment` pane (top right)
+> 6. Close and reopen RStudio (making sure to `save` your data on exit). Make sure you read the 
+> message!
+> 7. If RStudio doesn't open up to the same project, navigate to the project using the `Files` pane 
+> and clicking on the `test_project.Rproj` file.
+{: .challenge}
+
+Now answer these questions: 
+
+> ## History and data
+> You should now have two new files in your project. 
+> What is the `.RData` file?  Hint: clear objects from your `Environment` (the broom icon next to 
+> `Import Dataset`), then click on `.RData`. 
+> > ## Solution
+> > The `.RData` contains all your data! i.e. variables, functions, dataframes etc. in your 
+> > environment. 
+> {: .solution}
+> What does `.RHistory` file do? Hint: Just click on it. 
+> > ## Solution
+> > The `.RHistory` is a text file containing all your previous commands. 
+> {: .solution}
+{: .challenge}
+
+> ## When things go wrong
+> Sometimes your project session will become corrupted, or start doing unexpected things. 
+> The first thing to try when debugging is to remove your `.RData` file  from the project and 
+> and clear your environment. Then try doing whatever your trying to do again. 
+> Very often the cause lies within a dodgy object in the saved environment. 
+{: .callout}
+
+
+## Other RStudio features
+
+Here are some other RStudio features which you should be aware of. The `Console` and `Files` panes,
+you should be already familiar with. 
+
+The `Terminal` is the same as the console but for the `bash` language, try typing `pwd` 
+(`p`rint `w`orking `d`irectory) to see what it does. 
+
+`Packages` shows a list of all the packages you have installed. 
+
+`Help` is the help files for all installed packages. 
+
+`Git` we'll go through later (shout if you don't have this!)
+
+`Environment` and `History` are useful so we'll do those as questions: 
+
+> ## Environment 
+> The environment pane contains all the objects in your session, e.g. functions, variables, 
+> dataframes etc. There is more than one environment however, the default one shown is the 
+> `Global Environemt`.  Select the `package: datasets` environment.  What does it show?  What happens
+> if you click on an object there? 
+> > ## Solution
+> > It shows all the objects in the base R package `datasets`. If you click on an object it 
+> > opens the dataset. 
+> {: .solution}
+> Try loading an installed package e.g. by running `library(data.table)` in the console. 
+> Now open that environment and click
+> on a `Value` e.g. `chgroup` . What happens?
+> > ## Solution
+> > The code is printed in the console. 
+> {: .solution}
+{: .challenge}
+
+
+> ## History
+> The history pane shows you all the previous commands that have been run. 
+> Run the following command in the console: 
+> ~~~ 
+> y <- rbeta(10, 1, 2)
+> ~~~
+> {: .language-r}
+> Now use the History pane to transfer this (with one click) to the last line of `test.R`. 
+> > ## Solution
+> > Highlight the relevant line and then click `To Source`. 
+> {: .solution}
+{: .challenge}
+
+Two other great features are tab complete and multiline editing. 
+
+> ## Tab complete
+> To tab complete, try typing <kbd>r</kbd> in the `test.R` file on a new line. Now hit the tab key 
+> (<kbd>Tab</kbd>) and you should see a list come up full of functions, datasets and packages all 
+> starting with the letter <kbd>r</kbd>. 
+{: .challenge}
+
+> ## Multiline editing
+> This is very  useful for repetitive code or text. 
+> 1. Create 5 blank lines in `test.R`. 
+> 2. Click your curser to the top of those lines. 
+> 3. Hold down <kbd>Alt</kbd> and drag your curser down 5 lines. 
+> 4. Type 'I love R'. 
+> 5. You should see 5 lots of 'I love R'. 
+{: .challenge}
+
+## Debugging
+
+When you've got to this point, please let your instructor
+know as we'll go through the debugger together. 
+
+> ## Further reading
+> Mastering all the features of an IDE is time consuming but well worth it. 
+> Check out RStudio tutorials by clicking [here](https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE)
+{: .callout}
+
+# RMarkdown
+
+RMarkdown is a powerful way of presenting your analysis in a way that's easy to code and easy to 
+read. 
+
+This lesson will draw heavily from the following excellent resources:
+
+> ## RMarkdown further reading
+> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
+> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+{: .callout}
+
+## What is it?
+
+**Markdown** is a simple language with minimal formatting features 
+that can be turned into HTML (i.e. webpages). i.e. write plain text and turn it into formatted text. 
+
+**RMarkdown** is a variant of Markdown which allows you to run code and print the output within the
+final document. It can be turned into HTML, pdfs and word documents as well. 
+
+## What's it good for?
+
+Consider your normal data analysis workflow. It's probably something like this:
+
+1. Do some data analysis. 
+2. Save plots in separate files and print results to screen or `.csv`. 
+2. Copy and paste results/charts into report.  
+
+If you need to update your analysis or data you have to painstakingly do 2- 3 again. In order to 
+reproduce the analysis you have to share the code *and* how you copied an pasted results into 
+the final report.
+
+With RMarkdown your workflow could be like this: 
+
+1. Write report in RMarkdown and insert analysis/numbers/charts where you need it. Then one-click to 
+publish. 
+
+If you need to update analysis, data, etc. Make changes and then one click to publish (again). 
+In order to reproduce the results just share the raw RMarkdown document. 
+
+An additional *major* benefit over writing documents in MS Word is that you can track changes with 
+version control, but more on that in episode 3. 
+
+RMarkdown can be used to author a wide variety of document types e.g. books, presentations,  journal 
+articles, websites, *this course*. 
+
+
+## RMarkdown file structure
+
+Create a new RMarkdown document by doing the following: 
+
+> ## Create an RMarkdown document
+> 1. Select `File` > `New File` > `R Markdown...`
+> 2. Select the  `Word` radio button. 
+> 3. Press `OK` when the `New RMarkdown` pane appears.  
+{: .challenge}
+
+RMarkdown requires some 'front matter' which is a collection of key/value pairs at the top of the 
+file which tells R how you want to process the output. The default front matter is : 
+
+~~~
+   ---
+   title: "Untitled"
+   author: "Rob Arbon"
+   date: "25/11/2019"
+   output: word_document
+   ---
+~~~
+{: .source}
+
+In order to create the final Word document you need to `knit` the document. This tells R to create 
+a document with the specified formatting and to run all the code and insert the relevant parts 
+into the document. The front matter above tells `R` to make a title ('Untitled')  and two subtitles 
+('Rob Arbon' and '25/11/2019') and create a Word document (as opposed to a PDF or a 
+web page). 
+
+> ## Knit your RMarkdown doc
+> 1. Click the `knit` button at the top of the RMarkdown document. 
+> 1. Save as 'test.Rmd'.
+> The Word document should pop up. If not search for it in a file browswer in the home directory
+> of the project. 
+{: .challenge}
+
+You can now proceed to insert your text and code.
+
+## Text syntax
+
+What follows is a non-comprehensive guide to Markdown syntax. 
+
+> hackmd.io 
+> If you want a real time feedback on what markdown looks like navigate to 
+> (hackmd.io)[hackmd.io] to try things out.  You'll need to scroll down to the bottom 
+> and click 'Use for free'.
+{: .callout}
+
+
+### Headings
+~~~
+    # Heading 1
+    ## Heading 2
+    ### Heading 3
+~~~
+{: .source}
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+### Lists
+
+Note - actual numbers don't matter, just have a number and a period `.`
+~~~
+    1. Item 1
+    1. Item 2
+        1. sub Item 1
+        3. sub Item 2
+    2. Item 3
+~~~
+{: .source}
+
+1. Item 1
+1. Item 2
+    1. sub Item 1
+    3. sub Item 2
+2. Item 3
+
+### Bullets
+
+~~~
+    * Item 1
+    * Item 2
+        * sub Item 1
+        * sub Item 2
+    * Item 3
+~~~
+{: .source}
+
+* Item 1
+* Item 2
+    * sub Item 1
+    * sub Item 2
+* Item 3
+
+### Links
+
+~~~
+[link text](www.google.com)
+~~~~
+{: .source}
+
+[link text](www.google.com)
+
+### Images 
+
+~~~~
+![very good science caption](../fig/verygoodscience-hex.png)
+~~~
+{: .source}
+
+![very good science caption](../fig/verygoodscience-hex.png)
+
+## Code chunks
+
+You can also include code in code  and the output of code in 'code chunks'.
+
+````markdown
+`r ''````{r}
+x <- rnorm(2)
+
+for(i in 1:length(x)){
+  print(x[[i]])
+}
+```
+````
+
+You run the code by clicking the little triangle icon in the top right: 
+![code chunk](../fig/rmd_code_chunk.png)
+
+This prints the code and the result:
+```{r}
+x <- rnorm(2)
+
+for(i in 1:length(x)){
+  print(x[[i]])
+}
 ```
 
-Getting to grips with R Markdown. This will provide students with the skills necessary to create an R Markdown file, which will ensure that study documents are reproducible and linked to analyses conducted in R in such a way that when the analyses are updated the document is automatically updated.
+
+As you can tell from the example document we `knit`ed at the start you can also show plots:
+
+````markdown
+`r ''````{r}
+library(ggplot2)
+x <- rbeta(1000,5,2)
+y <- rbeta(1000,0.3, 0.3)
+ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
+}
+```
+````
+
+gives the following code and plot
+~~~
+library(ggplot2)
+x <- rbeta(1000,5,2)
+y <- rbeta(1000,0.3, 0.3)
+ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
+~~~
+{: .language-r}
+![beta correlation](../fig/beta_correlation.png)
 
 
-
+There's lots more that can be done with RMarkdown, please read the documentation to find out more. 
+You'll also have a chance to play around with it in episode 4. 
