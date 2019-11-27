@@ -10,7 +10,7 @@ You can view the deployed lesson resources at: [tinyurl.com/uob-roar](http://www
 
 You can look at the slides onlines here:
 * [Course Introduction](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
-* [Core concepts in reproducibility)[https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/core_concepts/index.html]
+* [Core concepts in reproducibility](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/core_concepts/index.html)
 
 ## Contributing
 
