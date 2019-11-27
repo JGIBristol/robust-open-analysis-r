@@ -11,3 +11,5 @@ _site
 .RData
 .idea/
 *.RProj
+.cache/
+librariesNew

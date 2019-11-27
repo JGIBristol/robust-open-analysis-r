@@ -1,6 +1,6 @@
 ---
 title: "Course Introduction"
-subtitle:  "Data analysis best practice"
+subtitle:  "Data Management Skills for Open Science"
 author: "Natalie Thurlby and Robert Arbon"
 highlighter: highlight.js
 hitheme: tomorrow
@@ -12,6 +12,7 @@ url:
   assets: ../assets
   lib: ../librariesNew
 widgets: mathjax
+
 --- &twocol
 <style>
 .title-slide {
@@ -21,7 +22,14 @@ widgets: mathjax
 .title-slide hgroup > h2 {
   color: #FFFFFF
 }
+em {
+  font-style: italic
+}
+strong {
+  font-weight: bold;
+}
 </style>
+
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
 # make this an external chunk that can be included in any file
 library(knitr)
@@ -40,119 +48,45 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
 
-## Welcome!
+## Data Management Skills for Open Science
+### Welcome!
+<br/>
 
 *** =left
 
-### Data Week 2019
-__Organised by the Jean Golding Institute__
+This event has been supported by:
+* The UK Reproducibility Network
+* Cancer Research UK
+* The Jean Golding Institute
 
-Some more events you might be interested in this week:
-* The African Regional Data Cube (tonight!)
-* Doing the future differently: Sociology, data science and the promise of a new response-ability (Thursday).
-
-*** =right
-
-```{r, echo=F,out.width='90%', fig.align='center'}
-include_graphics('fig/dataweek.jpeg')
-```
-
---- &twocol
-
-## Jean Golding Institute (JGI)
-
-*** =left
-#### Overview
-The JGI is a University Research Institute for data science and data intensive research (for all faculties/schools)
-
-What we do: 
-  * Data competitions
-  * Workshops and training
-  * Networking and events 
-  * Funding
-  * Student projects
-  
-Keep up to date via our mailing list! [bristol.ac.uk/golding/join-our-mailing-list/](bristol.ac.uk/golding/join-our-mailing-list/)
+The work has been carried out by:
+* __Instructors__: Rob Arbon and Natalie Thurlby
+* __Teaching assistant__: Katie Drax
+* __Organiser__: Jackie Thompson
 
 *** =right
-#### Ask-JGI
-For researchers and staff, offering support, signposting and advice for all your data intensive research queries.
 
-Email: `ask-jgi@bristol.ac.uk`
-
-```{r, echo=F,out.width='70%', fig.align='center'}
-include_graphics('fig/concepts-with-hyphens.png')
-```
-
---- &twocol
-
-## Alan Turing Institute
-
-*** =left
-```{r, echo=F,out.width='80%'}
-include_graphics('fig/alanturinginstitute-logo.png')
-```
-* National institute for data science
-* Inside the British Library
-* Lots of opportunities for staff and students
-* The JGI is the contact point for UoB
-
-*** =right
-```{r, echo=F,out.width='80%'}
-include_graphics('fig/alanturinginstitute.png')
-```
-
---- &twocol
-
-## Jean Golding 
-
-*** =left 
-* Professor Jean Golding OBE is an epidemiologist at Bristol
-* She set up the ALSPAC (*Children of the 90s*) study
-* Led to many important discoveries in child development and health  
-
-```{r, echo=F,out.width='75%', fig.align='center'}
-include_graphics('fig/backs.png')
-```
-
-*** =right
-```{r, echo=F,out.width='80%'}
-include_graphics('fig/jean.jpg')
-```
-
---- &twocol
-
-## Reproducibility at Bristol 
-
-*** =left
-### UK Reproducibility Network (UKRN)
-
-```{r, echo=F, fig.align='center',out.width='38%'}
+```{r, echo=F, fig.align='center',out.width='50%'}
 include_graphics('fig/ukrn-logo.jpg')
 ```
-* Multi-disciplinary network  working to promote reproducible research in the UK (`@ukrepro`)
-* There is a local Bristol working group (please email hugo.pedder@bristol.ac.uk to be put added to the group/mailing list)
+
+--- &twocol
+
+## Shout-outs 
+
+*** =left
+
+* __ReproducibiliTea Journal Club__, fortnightly Tuesdays 4pm, grp-ReproducibiliTea or ask Katie, also on twitter at @ReproducibiliT
+* __Bristol Reproducibility Network__, grp-Bristol-Reproducibility-Network, @ukrepro
+* __Data Week 2020__, 14-20 June 2020, Jean Golding Institute mailing list [bristol.ac.uk/golding/join-our-mailing-list/](bristol.ac.uk/golding/join-our-mailing-list/)
+* __ACRC training courses__, ACRC mailing list [bristol.ac.uk/acrc/acrc-training/](http://www.bristol.ac.uk/acrc/acrc-training/)
+* Ask-JGI, Ask-RSE and Statistics Clinic
 
 *** =right
-### ReproducibiliTea
-```{r, echo=F, fig.align='center',out.width='40%'}
-include_graphics('fig/reproducibiliT.jpg')
-```
-* Journal club!
-* Meets every Tuesday at 4pm
-* Email katie.drax@bristol.ac.uk to be added to the mailing list
-* (Named after a reproducibility podcast, which you may also like `@ReproducibiliT`)
-
---- 
 
 ```{r, echo=F, fig.align='center',out.width='80%'}
-include_graphics('fig/maps.png')
+include_graphics('fig/reproducibiliT.jpg')
 ```
-
-* Experiment where we ask many researchers the same question using the same dataset:
-  - "Is depression at age 16 associated with computer use at age 18?"
-* This study is currently open for collaborators (>140 registered researchers)
-* https://jean-golding-institute.github.io/maps/
 
 --- &twocol
 
@@ -166,54 +100,55 @@ include_graphics('fig/natalie.jpg')
 ```
 - Data scientist
 - Computational biology
-- (Nearly) Carpentries instructor
+- Official Carpentries instructor
 - `@statalieT`
 
 *** =right
 ### Robert Arbon
+
 ```{r,out.width='35%', echo=F, fig.align='left'}
 include_graphics('fig/robert.jpg')
 ```
-- Data scientist
-- Computational chemist
-- Previously data scientist/economics analyst for dev. agencies (e.g. World Bank)
-- `@bertiearbon`
+
+* Data scientist
+* Computational chemist
+* Previously data scientist/economics analyst for dev. agencies (e.g. World Bank)
+* `@bertiearbon`
 
 --- 
 
 ## Introductions: Your turn!
 
 Get into groups of around 5 people.
-
-Take it in turns to introduce yourself to your group (2 mins each)
+Take it in turns to introduce yourself to your group (1 min each)
 
 Tell them:
- - Your name
- - Your research area
- - Why you came here today
+ * Your name
+ * Your research area
+ * Why you came here today
 
 --- 
 
 ## About this course
 
 - __Aim__: 
-  - To make your research easier, more enjoyable, and more reproducible.
+    - To make your research easier, more enjoyable, and more reproducible.
 - **Delivery**:
-  - Short presentations
-  - Group discussions (with concept maps)
-  - Practicals
+    - Short presentations
+    - Group discussions (with concept maps)
+   - Practicals
 - **Outcomes**:
-  - Understand four problems in reproducible research (P-hacking/Harking/Publication Bias/Un"FAIR"ness) and solutions to them (Preregistration/RR/Literate programming/Versions control/Open Research)
-  - Be familiar with the Open Science Framework.
-  - Know how to use RMarkdown for literate programming.
-  - Understand how to use Git for Version Control for your research
+    - Understand four roadblocks of reproducible research: P-hacking, HARKing, Publication Bias, and Un"FAIR"ness
+    - Understand some solutions to these problems: Preregistration, Registered Reportsk, Literate programming in Rmarkdown, Versions control, the Open Science Framework, and FAIR principles
 
---- 
+
+---
 ## Where are the materials?
+You don't need to write anything down. You can find all our presentations and materials online at [github.com/Jean-Golding-Institute/robust-open-analysis-r](https://github.com/Jean-Golding-Institute/robust-open-analysis-r). 
 
-You don't need to write everything down. You can find all our presentations and materials online at [github.com/Jean-Golding-Institute/analysis_best_practice](https://github.com/Jean-Golding-Institute/analysis_best_practice) (this link has been emailed to you).
+This tiny URL goes to the same place: [tinyurl.com/uob-roar](http://www.tinyurl.com/uob-roar)
 
-You can also use this GitHub page to make suggestions for edits to this workshop (by opening a GitHub issue):
+You can also use this GitHub page to make suggestions for edits to this workshop (by opening a GitHub issue - I'll show you how later!):
 ```{r, echo=F, out.width ='80%',fig.align='left'}
 include_graphics('fig/github-issue.png')
 ```
@@ -227,8 +162,8 @@ We will follow the Software Carpentries code of conduct: https://docs.carpentrie
 *** =left
 Please follow the four social rules:
 
-1.  No feigning surprise
-2. No "Well-Actuallys"
+1.  No feigning surprise 
+2.  No "Well-Actuallys"
 3.  No Backseat Driving
 4.  No subtle "isms"
 
@@ -242,17 +177,17 @@ include_graphics('fig/dorothy.jpeg')
 
 ## Approximate itinerary
 
-- 9:00 - Welcome and introductions
-- 9:35 - Reproducible research
-- 10:45 - Break
-- 11:00 - Reproducible research environment 
-* 12:00 - Lunch (with a short walk)
-* 13:00 - Version control
-* 14:45 - Break
-* 15:00 - Putting it all together
-* 15:30 - Finish 
-
-We're finishing a little early so that we can all attend Rosemary's talk "The African Regional Data Cube" if we want to.
+* 8:30 - Breakfast
+* 9:00 - __Welcome and introductions__
+* 9:20 - __Core concepts in reproducibility__
+* 10:15 - __Selfish Reasons to work reproducibly__
+* 11:00 - Coffee break
+* 11:30 - __Getting to grips with RMarkdown__
+* 12:30 - Lunch (with a short walk)
+* 13:15 - __Version Control using Git, GitHub and RStudio__
+* 15:00 - Coffee Break
+* 15:00 - __Putting it all together__
+* 17:30 - Refreshments and discussion 
 
 --- &twocol
 
