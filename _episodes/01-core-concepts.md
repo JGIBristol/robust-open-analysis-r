@@ -57,16 +57,20 @@ The matrix below (from [The Turing Way](https://the-turing-way.netlify.com/)) gi
 > Scientific results are commonly reported with numbers to help resarchers understand their importance. Two of these measures are p-values and effect size and much of the discussion around reproducible, replicable, and robust research centres around these two measurements. 
 > As a reminder:
 > * __Effect Sizes__ measure the strength of a relationship between two variables. There are different types of effect size, for example Cohen's D or the Pearson corellation coefficient.
-> * __P-values__ measure the probability of getting as convincing a result by chance assuming that there is no effect.
+> * __P-values__ measure the probability of getting as convincing a result by chance assuming that there is no effect - they range between 0 and 1. The commonly used threshold for a "statistically significant" result is p < 0.05.
 {: .callout}
 
 ## What is the reproducibility crisis?
 
-Less than 40% of replications of well-known Psychology studies had significant results:
+The reproducibility crisis is a recent event in science, where scientific results were found to replicate much less than scientists had assumed or hoped that they would.
 
+__Less than 40% of replications of well-known Psychology studies were found to reproduce__ (have significant results):
 ![Psychology Replication Results](../fig/psychology-replication-paper.jpg)
 P-values in the original studies were constrained between 0 and just above 0.05, but in the replications, p-values ranged from 0 to 1 (with less than 40% being less than 0.05). Effect sizes were noticably lower, too.
 
+Similar results were found in Cancer Biology (where less than 10% of results replicated).
+
+## 
 
 
 
