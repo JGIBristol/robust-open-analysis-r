@@ -53,7 +53,7 @@ A good about RStudio is `Projects`. Let's create one now.
 > ## Create a new project
 > 1. Open RStudio
 > 2. Select `File` > `New Project` > `New Directory` > `New Project` 
-> 3. `Directory name`: "test_project"
+> 3. `Directory name`: "roar_workshop"
 > 4. `Create project as...`: Select a convenient directory
 > 5. Check the `Create a git repository` radio button
 > 6. Select `Create Project`
@@ -86,7 +86,7 @@ Before we tour Rstudio let's make sure we've all configured our session the same
 Now look at `Files` pane (bottom right). You should see two files: 
 
 1. `.gitignore` 
-2. `test_project.Rproj` 
+2. `roar_workshop.Rproj` 
 
 Ignore the first one (for now). The `Rproj` is a text file which contains all of the project 
 specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen
@@ -390,6 +390,9 @@ for(i in 1:length(x)){
 ```
 ````
 
+You run the code by clicking the little triangle icon in the top right: 
+![code chunk](../fig/rmd_code_chunk.png)
+
 This prints the code and the result:
 
 ```r
@@ -401,8 +404,8 @@ for(i in 1:length(x)){
 ```
 
 ```
-## [1] 0.706741
-## [1] -0.8476895
+## [1] -2.206187
+## [1] -0.1454214
 ```
 
 
@@ -418,6 +421,7 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 ```
 ````
 
+gives the following code and plot
 ~~~
 library(ggplot2)
 x <- rbeta(1000,5,2)
@@ -428,3 +432,5 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 ![beta correlation](../fig/beta_correlation.png)
 
 
+There's lots more that can be done with RMarkdown, please read the documentation to find out more. 
+You'll also have a chance to play around with it in episode 4. 

@@ -51,7 +51,7 @@ A good about RStudio is `Projects`. Let's create one now.
 > ## Create a new project
 > 1. Open RStudio
 > 2. Select `File` > `New Project` > `New Directory` > `New Project` 
-> 3. `Directory name`: "test_project"
+> 3. `Directory name`: "roar_workshop"
 > 4. `Create project as...`: Select a convenient directory
 > 5. Check the `Create a git repository` radio button
 > 6. Select `Create Project`
@@ -84,7 +84,7 @@ Before we tour Rstudio let's make sure we've all configured our session the same
 Now look at `Files` pane (bottom right). You should see two files: 
 
 1. `.gitignore` 
-2. `test_project.Rproj` 
+2. `roar_workshop.Rproj` 
 
 Ignore the first one (for now). The `Rproj` is a text file which contains all of the project 
 specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen
@@ -387,6 +387,9 @@ for(i in 1:length(x)){
 }
 ```
 ````
+
+You run the code by clicking the little triangle icon in the top right: 
+![code chunk](../fig/rmd_code_chunk.png)
 
 This prints the code and the result:
 ```{r}
