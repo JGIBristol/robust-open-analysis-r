@@ -5,11 +5,11 @@ title: "Putting it all together"
 teaching: 10
 exercises: 50
 questions:
- - "How do all the RMarkdown, Git(hub), and Open Science Framework together to create a reproducible workflow?"
+ - "How do RMarkdown, Git, and Open Science Framework work together for a data analysis?"
 objectives: 
-- "To produce a simple example of a reproducible workflow, from writing some analysis, using version control to log changes, and then make it available on the web."
+- "To produce a simple example of a reproducible workflow"
 keypoints: 
-- "kajfdlkaj"
+- "Open Science Framework (OSF) is a tool for organising projects and sharing them on the web"
 source: Rmd
 ---
 
