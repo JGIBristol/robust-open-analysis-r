@@ -1,8 +1,6 @@
 ---
 title: "Core concepts in reproducibility"
-author: "Rob Arbon, Natalie Thurlby"
-date: "05/11/2019"
-output: html_document
+source: Rmd
 ---
 
 ```{r setup, include=FALSE}

@@ -1,5 +1,4 @@
 generate_md_episodes <- function() {
-
   library("methods")
   
   if (!require("remotes", quietly = TRUE)) {
