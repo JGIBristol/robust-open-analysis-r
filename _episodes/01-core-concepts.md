@@ -5,10 +5,70 @@ title: "Core concepts in reproducibility"
 author: "Rob Arbon, Natalie Thurlby"
 date: "05/11/2019"
 output: html_document
+teaching: 45
+exercises: 25
+
+questions:
+- "What is the reproducibility crisis?"
+- "Why would we want to work reproducibly?"
+- "What are the key problems for reproducible research?"
+- "How can we solve these key problems in our research?"
+objectives:
+- "Describe the purpose and use of each pane in the RStudio IDE"
+- "Locate buttons and options in the RStudio IDE"
+- "Define a variable"
+- "Assign data to a variable"
+- "Manage a workspace in an interactive R session"
+- "Use mathematical and comparison operators"
+- "Call functions"
+- "Manage packages"
+keypoints:
+- "Use RStudio to write and run R programs."
+- "R has the usual arithmetic operators and mathematical functions."
+- "Use `<-` to assign values to variables."
+- "Use `ls()` to list the variables in a program."
+- "Use `rm()` to delete objects in a program."
+- "Use `install.packages()` to install packages (libraries)."
+source: Rmd
 ---
 
+<!-- Core concepts in reproducibility. This will cover basic elements that go wrong in common research practices (and that the skills covered in this workshop will help ameliorate), e.g. p-hacking, HARKing, FAIR principles, publication bias, power etc., and how they lead to bad science. Participants will identify and discuss how these issues affect their own research areas. -->
 
 
-Core concepts in reproducibility. This will cover basic elements that go wrong in common research practices (and that the skills covered in this workshop will help ameliorate), e.g. p-hacking, HARKing, FAIR principles, publication bias, power etc., and how they lead to bad science. Participants will identify and discuss how these issues affect their own research areas.
+
+## Motivation
+
+It's important that we can trust the results of research because we rely on those results to inform us. We make policies and laws, and choose which avenues of our own research to explore. If research is untrustworthy, that could result in anything from wasting time and money, causing a PhD student distress, or even cost lives (for example, in the case of basing policy or choice of drug perscribed on research).
+
+Aside from the important benefits for society, we also want others to trust our research as it's connected to our reputation, and our success in our future careers.
+
+## What is reproducibility?
+
+The most basic definition of reproducibilty is: a research result is reproducible if you can get the __same result__ when you do the research again. Sometimes it's useful to go one step further and distinguish between different types of reproducible research.
+
+The matrix below (from [The Turing Way](https://the-turing-way.netlify.com/)) gives a useful set of definitions:
+![Reproducibility Matrix](../fig/reproducibility_matrix.jpeg)
+* Results are __reproducible__ if we get the same result when we do the research again using the same analysis, on the same data.
+* Results are __replicable__ if we get the same result when we do the research again using the same analysis, on different (newly collected) data.
+* Results are __robust__ if we get the same result when we do the research again using different analysis, on the same data.
+* Results are __generalisable__ if we get the same result when we do the research again using a different analysis, on different (newly collected) data.
+
+> ## What do we mean by the same result?
+> Scientific results are commonly reported with numbers to help resarchers understand their importance. Two of these measures are p-values and effect size and much of the discussion around reproducible, replicable, and robust research centres around these two measurements. 
+> As a reminder:
+> * __Effect Sizes__ measure the strength of a relationship between two variables. There are different types of effect size, for example Cohen's D or the Pearson corellation coefficient.
+> * __P-values__ measure the probability of getting as convincing a result by chance assuming that there is no effect.
+{: .callout}
+
+## What is the reproducibility crisis?
+
+Less than 40% of replications of well-known Psychology studies had significant results:
+
+![Psychology Replication Results](../fig/psychology-replication-paper.jpg)
+P-values in the original studies were constrained between 0 and just above 0.05, but in the replications, p-values ranged from 0 to 1 (with less than 40% being less than 0.05). Effect sizes were noticably lower, too.
+
+
+
+
 
 
