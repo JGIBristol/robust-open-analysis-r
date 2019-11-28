@@ -109,7 +109,9 @@ files. If you haven't done this, navigate to
 publication)
 
 ## Step 4 
-You should now link the local repository you've created to a new remote repository on Github. To make things easier you can set up SSH access to Github. This isn't necessary but if you do this you won't have to sign in when using Github from your computer. 
+You should now link the local repository you've created to a new remote repository on Github. To make things easier you can set up SSH access to Github. This isn't necessary but if you do this you won't have to sign in when using Github from your computer.
+
+Thanks to [Happy Git with R](https://happygitwithr.com/) for the instructions. 
 
 > ## Optional: Set up SSH keys
 > Follow the instructions on the Github website [here](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account) to set up your SSH key. 
