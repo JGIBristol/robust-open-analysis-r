@@ -19,9 +19,7 @@ This section will mostly be guided exercises allowing you to piece together ever
 learned so far. 
 
 # Open Science Framework
-
 ## OSF features
-
 The [Open Science Framework (OSF)](osf.io) is a great tool for sharing your work. 
 
 > ## Sign up to the OSF
@@ -48,7 +46,6 @@ there is also guides to best practice in open science research practices which c
 [here](https://help.osf.io/hc/en-us/categories/360001530634-Best-Practices). 
 
 ## OSF Projects
-
 The basic unit of organisation in the OSF Project. Below is a screen shot of a project we have 
 called 'Fun New Project'. Each part is described below. 
 
@@ -74,30 +71,26 @@ they are exactly the same as a project.
     6. **Add-ons**: configure your add-ons and integrations such as Google Drive and Github. 
     7. **Settings**: Miscellaneous settings for the project, e.g. title, email notifications, metadata. 
 
-
 > ## Create OSF project
 > Click on the `Create new project` (see the image below) and create a new project. 
 > Call it `ROAR Workshop`.
 > ![osf](../fig/osf_dashboard.png)
 {: .challenge}
 
-
 # Work flow
-
 To summarise, our suggested workflow is the following (a detailed explanation is below). Many of 
 these steps you should have already done in this workshop. We present it like this so that you have 
 a guide for future projects. 
 
 ![workflow](../fig/workflow.png)
 
-
-**Steps 1 and 2**
+## Steps 1 and 2
 From episode 2 you should have already created an RStudio project called `roar_workshop` and 
 initialized it as a `git` repository with a `.gitignore` file that ignores standard `R` and `RStudio`
 files. If you haven't done this, navigate to 
 [episode 2]({{ page.root }}{% link _episodes/02-RMarkdown.md %}) and follow the instructions there. 
 
-**Step 3**
+## Step 3
 > ## Create directory structure
 > Using the `Files` pane in `RStudio` create the following file structure. You should already have
 > the `test.R` and `test.Rmd` files from episode 2.  
@@ -117,13 +110,27 @@ files. If you haven't done this, navigate to
 * `images` can be used to store copies of images that you might need to keep separate (e.g. for 
 publication)
 
-**Step 4** 
-In episode 3 you should have created a Github remote repository and linked it to this local 
-repository. If you haven't, navigate to 
-[episode 3]({{ page.root }}{% link _episodes/03-version-control-RStudio.md %}) for instructions 
-and do that now. 
+## Step 4 
+You should now link the local repository you've created to a new remote repository on Github. To make things easier you can set up SSH access to Github. This isn't necessary but if you do this you won't have to sign in when using Github from your computer. 
 
-**Step 5**
+> ## Optional: Set up SSH keys
+> Follow the instructions on the Github website [here](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account) to set up your SSH key. 
+{: .challenge}
+
+> ## Linking local and remote repositories
+> 1. Go to https://github.com and make sure you are logged in.
+> 2. Click the green `New repository` button. Or, if you are on your own profile page, click on `Repositories`, then click the green “New” button.
+> 3. Call the repository 'roar_workshop'
+> 4. DO NOT initialize this repository with a README.
+> 5. Click the big green button `Create repository.`
+> 6. Copy the SSH clone URL to your clipboard via the green `Clone or Download` button. If the link starts with `https` then click the `Use SSH` button in the top right hand corner. 
+> 7. Get back to RStudio. 
+> 7. Click on the “two purple boxes and a white square” in the Git pane. Click `Add remote`. `Remote Name` should be `origin` (this is the usual name for it); `Remote URL`: paste the url from Github. 
+> 8. We should be back in the `New Branch` dialog I assume you’re on the master branch want it to track master on GitHub. Enter master as the branch name and make sure `Sync branch with remote` is checked. Click `Create` (yes, even though the branch already exists). In the next dialog, choose `overwrite`.
+{: .challenge}
+
+
+## Step 5
 You should have created an OSF project. If you haven't, do this now (see above exercise). You should 
 now link Github the github repo as an add-on: 
 
@@ -134,8 +141,9 @@ now link Github the github repo as an add-on:
 > Navigate to the `Configure Add-ons` box at the bottom and click `Import from Profile`. 
 > Link your account by following the instructions
 > Find your `raor_workshop` repository and click `Save`. 
+{: .challenge}
 
-**Step 6 and 7**
+## Step 6 and 7
 
 > ## Data analysis!
 > you should now create an RMarkdown document called `old_faithful.Rmd` and do some exploratory 
@@ -147,10 +155,9 @@ now link Github the github repo as an add-on:
 Keep adding analysis and adding/committing/pushing. Try and make a story out of the data. An example 
 can be found [here](https://gist.github.com/RobertArbon/6789faa0a207648bc09b2aac982f6e0a). 
 
-**Step 8**
+## Step 8 
 When you're happy with your analysis. `knit` it to either `html_document` or a `word_document` by 
 adjusting the `output` variable in the front matter and pressing `knit` button. 
-
 You should then upload the html or Word document to the OSF project. 
 
 
