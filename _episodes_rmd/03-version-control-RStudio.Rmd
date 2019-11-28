@@ -1,5 +1,21 @@
 ---
 title: "Version Control in RStudio"
+teaching: 40
+exercises: 80
+questions:
+- "Why use version control?"
+- "What is the difference between Git and GitHub?"
+- "How can I use Git from inside RStudio?"
+objectives:
+- "Have an overview of issues surrounding the reproducibility crisis and current ways to avoid those pitfalls."
+- "Be aware of the tools and practices that are used in your area of research and how they may contribute to the reproducibility crisis."
+keypoints:
+- "Git is like an unlimited undo button that also helps you work with others"
+- "GitHub keeps a public copy of your Git repository, with extra functionality"
+- "Introduce yourself to git using the `git config` command."
+- "Make a new branch whenever you want to do a new task"
+- "Use ```git add```, then ```git commit```, then ```git push``` to copy snapshots that you're happy with from your local files to the public copy on GitHub"
+- "Merge branches back into the master branch when the task is finished"
 source: Rmd
 ---
 
@@ -7,7 +23,65 @@ source: Rmd
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Using GitHub for reproducible research. This will introduce students to the git version control system and GitHub service for analytical code. In addition to version control, students will learn about the best ways to make code accessible, interpretable and usable by others, including appropriate code structure, documentation and open source licensing.  
+## Motivation
+<!-- copy from existing carpentries-- http://swcarpentry.github.io/git-novice/01-basics/index.html-->
 
+## How Git Works. Snapshots and branches.
+![][fig/git-tree.png]
 
+### Snapshots
 
+### Branches
+
+### The Staging area
+
+### Local and remote (pushing and pulling)
+
+## Rules for making Git easy and useful
+1. __Take lots of snapshots of your code__. Not only is this the "save your work regularly" of Git/GitHub, it also helps you document the progress that you're making.
+2. __Make the snapshot labels (aka commit messages) informative__. Each time you ```commit``` you must write a commit message (Git won't let you not). The more informative these are the better.
+3. __The master branch is your perfect baby__. It's the version of your code that you show to other people. It doesnt contain half-finished features. The things that are in the master branch work and you're happy with them. Because of this, things are made much easier if you branch your new branches from the master branch.
+
+## Steps to using Git
+1. Make a new branch
+2. Make some snapshots
+3. Merge the branch back into master when you're happy with it.
+
+## Introduce yourself to Git using ```git config```
+
+## Create a new GitHub Repository
+
+## Make GitHub and Rstudio to talk to each other
+
+## Follow the steps to using Git
+1. Make a new issue on GitHub describing what you're planning on doing.
+(You don't have to have a branch per GitHub issue, but it's a really good option.)
+  - Go to GitHub
+  - Open an issue
+  - Assign it to yourself
+2. Make a new branch for your new feature
+<!-- convert to R -->
+```
+git pull
+git checkout master
+git branch branch_name
+git checkout branch_name
+```
+3. Make some snapshots (from within Rstudio)
+  - Change the markdown file (or make a new one)
+  - Save the markdown (or other) file
+  - Stage/add the file
+  - Commit the file (with a useful commit message)
+  - Push the file to GitHub (have a look and check it's there)
+3. Merge the branch back into master when you're happy with it.
+4. Close the issue, and repeat.
+
+## Making changes on GitHub directly.
+1. Make a new branch on GitHub
+2. Edit the README
+3. Pull from 
+
+>## Discussion
+>Discuss your experiences with each other (5 minutes)
+>If markdown, Rstudio, Version control, Git, and GitHub aren't on your concept map, add them and >try to find connections between them. (10 minutes)
+{: .discussion}
