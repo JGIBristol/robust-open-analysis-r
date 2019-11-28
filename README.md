@@ -8,6 +8,8 @@ You can view the deployed lesson resources [here](https://jean-golding-institute
 ## 23/11/19 Workshop
 You can view the deployed lesson resources at: [tinyurl.com/uob-roar](http://www.tinyurl.com/uob-roar)
 
+If you're having trouble getting Git and Rstudio to talk, then try [Rstudio Cloud](https://rstudio.cloud). You can login with your GitHub ID.
+
 You can look at the slides onlines here:
 * [Course Introduction](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
 * [Core concepts in reproducibility](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/core_concepts/index.html)
