@@ -32,9 +32,8 @@ if(length(new.packages)) install.packages(new.packages)
 
 ## Tutorials to do before workshop
 
-We expect you to have some fluency in R before the course begins. The following course is a good introduction to R done in RStudio interactively.
+We expect you to have some fluency in R before the course begins. If you aren't already familiar with R, you can use [swirl](https://swirlstats.com/students.html), which is a good introduction to R done in RStudio interactively.
 
-[swirl](https://swirlstats.com/students.html)
 
 The tl;dr is:
 
