@@ -48,7 +48,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
 
-## Data Management Skills for Open Science
+## Robust and Open Analysis in R (ROAR)
 ### Welcome!
 <br/>
 
@@ -70,84 +70,61 @@ The work has been carried out by:
 include_graphics('fig/ukrn-logo.jpg')
 ```
 
---- &twocol
+---
 
-## Shout-outs 
-
-*** =left
-
-* __ReproducibiliTea Journal Club__, fortnightly Tuesdays 4pm, grp-ReproducibiliTea or ask Katie, also on twitter at @ReproducibiliT
-* __Bristol Reproducibility Network__, grp-Bristol-Reproducibility-Network, @ukrepro
-* __Data Week 2020__, 14-20 June 2020, Jean Golding Institute mailing list [bristol.ac.uk/golding/join-our-mailing-list/](bristol.ac.uk/golding/join-our-mailing-list/)
-* __ACRC training courses__, ACRC mailing list [bristol.ac.uk/acrc/acrc-training/](http://www.bristol.ac.uk/acrc/acrc-training/)
-* Ask-JGI, Ask-RSE and Statistics Clinic
-
-*** =right
-
-```{r, echo=F, fig.align='center',out.width='80%'}
-include_graphics('fig/reproducibiliT.jpg')
-```
-
---- &twocol
-
-## Introductions: Natalie and Rob
-Who are we and why do we care about reproducible research?
-
-*** =left
-### Natalie Thurlby 
-```{r, out.width='40%', echo=F, fig.align='left'}
-include_graphics('fig/natalie.jpg')
-```
-- Data scientist
-- Computational biology
-- Official Carpentries instructor
-- `@statalieT`
-
-*** =right
-### Robert Arbon
-
-```{r,out.width='35%', echo=F, fig.align='left'}
-include_graphics('fig/robert.jpg')
-```
-
-* Data scientist
-* Computational chemist
-* Previously data scientist/economics analyst for dev. agencies (e.g. World Bank)
-* `@bertiearbon`
-
---- 
-
-## Introductions: Your turn!
-
-Go to: [hackmd.io/@nataliethurlby/ROAR](https://hackmd.io/@nataliethurlby/ROAR/edit)
-
-Introduce yourself by writing: _Your Name + Your university and department + an emoji that represents your research + an emoji that represents your week._
-
---- 
-
-## About this course
-
+## Why are we here?
 - __Aim__: 
     - To make your research easier, more enjoyable, and more reproducible.
+    - Be guided through a workflow for open and reproducible research.
 - **Delivery**:
     - Short presentations
     - Group discussions (with concept maps)
-   - Practicals
+    - Practicals
 - **Outcomes**:
-    - Understand four roadblocks of reproducible research: P-hacking, HARKing, Publication Bias, and Un"FAIR"ness
-    - Understand some solutions to these problems: Preregistration, Registered Reportsk, Literate programming in Rmarkdown, Versions control, the Open Science Framework, and FAIR principles
-
+    - Understand the motivations for working reproducibly. 
+    - Understand how Rmarkdown can be used to create resources in different formats.
+    - Be confident pulling and pushing to GitHub using Git.
 
 ---
-## Where are the materials?
-You don't need to write anything down. You can find all our presentations and materials online at [github.com/Jean-Golding-Institute/robust-open-analysis-r](https://github.com/Jean-Golding-Institute/robust-open-analysis-r). 
 
-This tiny URL goes to the same place: [tinyurl.com/uob-roar](http://www.tinyurl.com/uob-roar)
+## Today's approximate itinerary
 
-You can also use this GitHub page to make suggestions for edits to this workshop (by opening a GitHub issue - I'll show you how later!):
-```{r, echo=F, out.width ='80%',fig.align='left'}
-include_graphics('fig/github-issue.png')
-```
+* 8:30 - Breakfast
+* 9:00 - __Welcome, introductions, and setup__
+* 9:20 - __Tour of Rstudio__
+* 9:40 - __The reproducibility crisis__
+* 10:00 - __Selfish Reasons to work reproducibly__
+* 10:45 - __Creating our concept map__
+* 11:00 - Coffee break
+* 11:30 - __Getting to grips with RMarkdown__
+* 12:30 - Lunch (with a short walk)
+* 13:15 - __Version Control using Git, GitHub and RStudio__
+* 15:00 - Coffee Break
+* 15:00 - __Putting it all together__
+* 17:30 - Refreshments and discussion 
+
+--- 
+
+##  Welcome, introductions, and setup:
+
+* How this course works
+  - Where are the materials?
+  - Code of conduct
+  - Post-it notes
+* Introductions
+  - Instructors
+  - Participants
+* Technology setup 
+
+---
+
+## Course materials
+
+You can find all of the course materials at [tinyurl.com/ROAR-workshop](https://tinyurl.com/ROAR-workshop). 
+
+This is a GitHub repository, but the materials are also displayed nicely on the web at [tinyurl.com/ROAR-website](https://tinyurl.com/ROAR-website)
+
+__Bookmark these sites now!__
 
 --- &twocol
 
@@ -169,22 +146,6 @@ Please follow the four social rules:
 include_graphics('fig/dorothy.jpeg')
 ```
 
----
-
-## Approximate itinerary
-
-* 8:30 - Breakfast
-* 9:00 - __Welcome and introductions__
-* 9:20 - __Core concepts in reproducibility__
-* 10:15 - __Selfish Reasons to work reproducibly__
-* 11:00 - Coffee break
-* 11:30 - __Getting to grips with RMarkdown__
-* 12:30 - Lunch (with a short walk)
-* 13:15 - __Version Control using Git, GitHub and RStudio__
-* 15:00 - Coffee Break
-* 15:00 - __Putting it all together__
-* 17:30 - Refreshments and discussion 
-
 --- &twocol
 
 ## Post-it notes
@@ -201,4 +162,69 @@ include_graphics('fig/pink.png')
 Green post-it means you're finished:
 ```{r, echo=F, out.width='95%', fig.align='left'}
 include_graphics('fig/green.png')
+```
+
+--- &twocol
+
+## Introductions: Natalie and Rob
+Who are we and why do we care about reproducible research?
+
+*** =left
+### Natalie Thurlby 
+```{r, out.width='40%', echo=F, fig.align='left'}
+include_graphics('fig/natalie.jpg')
+```
+- Data scientist
+- Computational biology
+- Carpentries instructor
+- `@statalieT`
+
+*** =right
+### Robert Arbon
+
+```{r,out.width='35%', echo=F, fig.align='left'}
+include_graphics('fig/robert.jpg')
+```
+
+* Data scientist
+* Computational chemist
+* Previously data scientist/economics analyst for dev. agencies (e.g. World Bank)
+* `@bertiearbon`
+
+--- 
+
+## Introductions: Your turn!
+
+If you haven't already: Sign up for a GitHub account!
+
+Go to: [hackmd.io/@nataliethurlby/ROAR](https://hackmd.io/@nataliethurlby/ROAR/edit)
+
+Introduce yourself by writing: _Your Name + Your university and department + an emoji that represents your research + an emoji that represents your week._
+
+--- 
+
+## Tech setup
+
+Let's check these three things together:
+* Open RStudio
+* Check packages installed
+* Try to create a new project with version control
+* Sign up for the Open Science Framework [osf.io](https://osf.io/)
+
+--- &twocol
+
+## Shout-outs 
+
+*** =left
+
+* __ReproducibiliTea Journal Club__, fortnightly Tuesdays 4pm, grp-ReproducibiliTea or ask Katie, also on twitter at @ReproducibiliT
+* __Bristol Reproducibility Network__, grp-Bristol-Reproducibility-Network, @ukrepro
+* __Data Week 2020__, 14-20 June 2020, Jean Golding Institute mailing list [bristol.ac.uk/golding/join-our-mailing-list/](bristol.ac.uk/golding/join-our-mailing-list/)
+* __ACRC training courses__, ACRC mailing list [bristol.ac.uk/acrc/acrc-training/](http://www.bristol.ac.uk/acrc/acrc-training/)
+* Ask-JGI, Ask-RSE and Statistics Clinic
+
+*** =right
+
+```{r, echo=F, fig.align='center',out.width='80%'}
+include_graphics('fig/reproducibiliT.jpg')
 ```
