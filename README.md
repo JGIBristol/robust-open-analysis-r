@@ -5,14 +5,22 @@ This repository contains the contents of the Robust and Open Analysis in R lesso
 
 You can view the deployed lesson resources [here](https://jean-golding-institute.github.io/robust-open-analysis-r/). 
 
-## 23/11/19 Workshop
-You can view the deployed lesson resources at: [tinyurl.com/uob-roar](http://www.tinyurl.com/uob-roar)
+## Information for workshop participants
+### Super-important links
+All of the resources from the website can be found in this repository (and will remain here in the future). Please bookmark the following websites:
+* We have a tinyurl for this repository at [tinyurl.com/ROAR-workshop](https://tinyurl.com/ROAR-workshop)
+* You can view the deployed lesson resources at [tinyurl.com/ROAR-website](https://tinyurl.com/ROAR-website)
 
-If you're having trouble getting Git and Rstudio to talk, then try [Rstudio Cloud](https://rstudio.cloud). You can login with your GitHub ID.
+You shouldn't need the slides in the workshop (as all of the information is also in the deployed lesson resources) but if you'd like them, you can find the knitted slides here:
+    - [Course Introduction Slides](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
+    - [Reproducibility Crisis Slides](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/core_concepts/index.html)
+    - [Version Control Slides](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/version_control/index.html)
 
-You can look at the slides onlines here:
-* [Course Introduction](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
-* [Core concepts in reproducibility](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/core_concepts/index.html)
+### Set-up instructions
+
+Please check out the [set-up instructions](https://jean-golding-institute.github.io/robust-open-analysis-r/setup.html)!
+
+If you're having trouble getting Git and Rstudio to talk, then use [Rstudio Cloud](https://rstudio.cloud) and login with your GitHub username. 
 
 ## Contributing
 
@@ -36,7 +44,7 @@ Current maintainers of this lesson are
 * Natalie Thurlby ([@NatalieThurlby](https://github.com/NatalieThurlby))
 * Rob Arbon ([@RobertArbon](https://github.com/robertarbon))
 
-We are currently looking for two more lesson maintainers, please contact Natalie if you'd like to get involved!
+We are currently looking for two more lesson maintainers, please contact Natalie and Rob if you'd like to get involved!
 
 ## Authors
 
