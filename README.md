@@ -8,8 +8,8 @@ You can view the deployed lesson resources [here](https://jean-golding-institute
 ## Information for workshop participants
 ### Super-important links
 All of the resources from the website can be found in this repository (and will remain here in the future). Please bookmark the following websites:
-* We have a tinyurl for this repository at [tinyurl.com/ROAR-workshop](https://tinyurl.com/ROAR-workshop)
-* You can view the deployed lesson resources at [tinyurl.com/ROAR-website](https://tinyurl.com/ROAR-website)
+* This repository! Tinyurl: [tinyurl.com/ROAR-workshop](https://tinyurl.com/ROAR-workshop)
+* The deployed lesson resources! Tinyurl: [tinyurl.com/ROAR-website](https://tinyurl.com/ROAR-website)
 
 You shouldn't need the slides in the workshop (as all of the information is also in the deployed lesson resources) but if you'd like them, you can find the knitted slides here:
     - [Course Introduction Slides](https://nataliethurlby.github.io/slides/robust-open-analysis-r/23-11-19/course_introduction/index.html)
