@@ -20,7 +20,7 @@ Will be using the following software.  Please make sure that it's installed on y
 
 ## Connect Rstudio and Git
 
-We will be using Rstudio's integrated version control. In order to do this, you will need to make sure that Rstudio can find Git. This is not easy to do in the lesson, so __please do this ahead of time__, as you may need the support of your IT department if you don't have administration rights on your machine. The instructions [here](https://happygitwithr.com/rstudio-see-git.html) will help you check if this is already done (and how to set it up if necessary). If you cannot make this work before the session, then please sign up for an account with [RStudio Cloud](https://rstudio.cloud).
+We will be using Rstudio's integrated version control. In order to do this, you will need to make sure that Rstudio can find Git. This is not easy to do in the lesson, so __please do this ahead of time__, as you may need the support of your IT department if you don't have administration rights on your machine. The instructions [here](https://happygitwithr.com/rstudio-see-git.html) will help you check if this is already done (and how to set it up if necessary). If you cannot make this work before the session, then please sign up to [RStudio Cloud](https://rstudio.cloud) using your GitHub account.
 
 ## Packages in R
 
