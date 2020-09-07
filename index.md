@@ -11,7 +11,7 @@ FIXME: home page introduction
 
 > ## Prerequisites
 >
-> FIXME
+> This lesson assumes some basic familiarity with R. 
 {: .prereq}
 
 {% include links.md %}
