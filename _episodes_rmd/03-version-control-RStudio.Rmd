@@ -1,5 +1,21 @@
 ---
 title: "Version Control in RStudio"
+teaching: 40
+exercises: 80
+questions:
+- "Why use version control?"
+- "What is the difference between Git and GitHub?"
+- "How can I use Git from inside RStudio?"
+objectives:
+- "Have an overview of issues surrounding the reproducibility crisis and current ways to avoid those pitfalls."
+- "Be aware of the tools and practices that are used in your area of research and how they may contribute to the reproducibility crisis."
+keypoints:
+- "Git is like an unlimited undo button that also helps you work with others"
+- "GitHub keeps a public copy of your Git repository, with extra functionality"
+- "Introduce yourself to git using the `git config` command."
+- "Make a new branch whenever you want to do a new task"
+- "Use ```git add```, then ```git commit```, then ```git push``` to copy snapshots that you're happy with from your local files to the public copy on GitHub"
+- "Merge branches back into the master branch when the task is finished"
 source: Rmd
 ---
 
@@ -7,7 +23,172 @@ source: Rmd
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Using GitHub for reproducible research. This will introduce students to the git version control system and GitHub service for analytical code. In addition to version control, students will learn about the best ways to make code accessible, interpretable and usable by others, including appropriate code structure, documentation and open source licensing.  
+## Motivation
+This material is based on the [git novice Carpentries materials](http://swcarpentry.github.io/git-novice/01-basics/index.html)
+
+We'll start by exploring how version control can be used
+to keep track of what one person did and when.
+Even if you aren't collaborating with other people,
+automated version control is much better than this situation. 
+[!["Piled Higher and Deeper by Jorge Cham"]({{ page.root }}/fig/final_version.jpg)](http://www.phdcomics.com)
+
+"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+
+We've all been in this situation before: it seems ridiculous to have
+multiple nearly-identical versions of the same document. Some word
+processors let us deal with this a little better, such as Microsoft
+Word's 
+[Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), 
+Google Docs' [version history](https://support.google.com/docs/answer/190843?hl=en), or 
+LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+
+Version control systems start with a base version of the document and
+then record changes you make each step of the way. You can
+think of it as a recording of your progress: you can rewind to start at the base
+document and play back each change you made, eventually arriving at your
+more recent version.
+
+![Changes Are Saved Sequentially]({{ page.root }}/fig/play-changes.svg)
+
+Once you think of changes as separate from the document itself, you
+can then think about "playing back" different sets of changes on the base document, ultimately
+resulting in different versions of that document. For example, two users can make independent
+sets of changes on the same document. 
+
+![Different Versions Can be Saved]({{ page.root }}/fig/versions.svg)
+
+Unless multiple users make changes to the same section of the document - a conflict - you can 
+incorporate two sets of changes into the same base document.
+
+![Multiple Versions Can be Merged]({{ page.root }}/fig/merge.svg)
+
+A version control system is a tool that keeps track of these changes for us,
+effectively creating different versions of our files. It allows us to decide
+which changes will be made to the next version (each record of these changes is
+called a [commit]({{ page.root }}{% link reference.md %}#commit)), and keeps useful metadata
+about them. The complete history of commits for a particular project and their
+metadata make up a [repository]({{ page.root }}{% link reference.md %}#repository).
+Repositories can be kept in sync across different computers, facilitating
+collaboration among different people.
+
+> ## Paper Writing
+>
+> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin 
+>     it. How would you retrieve the *excellent* version of your conclusion? Is it even possible?
+>
+> *   Imagine you have 5 co-authors. How would you manage the changes and comments 
+>     they make to your paper?  If you use LibreOffice Writer or Microsoft Word, what happens if 
+>     you accept changes made using the `Track Changes` option? Do you have a 
+>     history of those changes?
+>
+> > ## Solution
+> >
+> > *   Recovering the excellent version is only possible if you created a copy
+> >     of the old version of the paper. The danger of losing good versions
+> >     often leads to the problematic workflow illustrated in the PhD Comics
+> >     cartoon at the top of this page.
+> >     
+> > *   Collaborative writing with traditional word processors is cumbersome.
+> >     Either every collaborator has to work on a document sequentially
+> >     (slowing down the process of writing), or you have to send out a
+> >     version to all collaborators and manually merge their comments into
+> >     your document. The 'track changes' or 'record changes' option can
+> >     highlight changes for you and simplifies merging, but as soon as you
+> >     accept changes you will lose their history. You will then no longer
+> >     know who suggested that change, why it was suggested, or when it was
+> >     merged into the rest of the document. Even online word processors like
+> >     Google Docs or Microsoft Office Online do not fully resolve these
+> >     problems.
+> {: .solution}
+{: .challenge}
+
+## How Git Works. 
+Imagine that you have a project that you want to keep track of. The information about this project will be stored in a git "__repository__".
+
+### Snapshots
+![]({{ page.root }}/fig/commits-simplified.svg)
+These circles represent a snapshot of your files at a certain point of time. In Git, a snapshot is called a "__commit__"- we can thing about committing to a version of our files. Each snapshot follows on from the one before.
+
+### Branches
+Work processes are not always linear. We are likely to have different versions of our work, not only in time. One snapshot/commit can result in two different versions (for example by two different people, or two different parts of a project).
+
+![]({{ page.root }}/fig/git-tree.png)
+Image by [Gonzalo Bulnes](https://gonzalo-bulnes.github.io/blog/gardening_with_git/context-from-scratch.html)
+
+### The Staging area
+![]({{ page.root }}/fig/git-staging-area.svg)
+Creating a snapshot is a two-stage process:
+1. First we must _"add"_ or _"stage"_" files, deciding that they are a file that we want to track the changes of.
+2. Then we decide that we are ready to take the snapshot, which is when we _"commit"_.
+
+### Local and remote (pushing and pulling)
+With Git, there is always a "local" and a "remote" copy of your data. The local copy is your version, that you are making changes to. The remote copy is the version that you share with others. This doesn't always have to be online, it can be a folder in a shared drive.
+
+However, storing the remote online is really useful for sharing your work with others. GitHub, GitLab and Bitbucket can all be used to store these remote copies.
+
+![]({{ page.root }}/fig/local-remote.svg)
+
+Putting changes on your local repository to the remote repository is called "pushing". Bringing changes from the remote repository is called "pulling".
+
+## Tour of GitHub
+[Github.com](http://www.GitHub.com)
+
+> ## Activity
+> Register/login to GitHub.
+> Create a repository called ROAR and tick the initiate it with a README box.
+{: .activity}
+
+## Rules for making Git easy and useful
+1. __Take lots of snapshots of your code__. Not only is this the "save your work regularly" of Git/GitHub, it also helps you document the progress that you're making.
+2. __Make the snapshot labels (aka commit messages) informative__. Each time you ```commit``` you must write a commit message (Git won't let you not). The more informative these are the better.
+3. __The master branch is your perfect baby__. It's the version of your code that you show to other people. It doesnt contain half-finished features. The things that are in the master branch work and you're happy with them. Because of this, things are made much easier if you branch your new branches from the master branch.
+
+## Steps to using Git
+1. Make a new branch
+2. Make some snapshots
+3. Merge the branch back into master when you're happy with it.
+
+## Introduce yourself to Git using ```git config```
 
 
+## Create a new GitHub Repository
+Walk-through
 
+## Make GitHub and Rstudio to talk to each other
+In RStudio, try:
+Create new project > Version Control > Git
+Fill in your GitHub repo location.
+
+If not working, you can try to follow the instructions here: https://happygitwithr.com/rstudio-see-git.html 
+Or take the easy option and go to rstudio.cloud 
+
+## Follow the steps to using Git
+1. Make a new issue on GitHub describing what you're planning on doing.
+(You don't have to have a branch per GitHub issue, but it's a really good option.)
+  - Go to GitHub
+  - Open an issue
+  - Assign it to yourself
+2. Make a new branch for your new feature
+pull
+checkout master
+create branch branch_name
+checkout branch_name
+3. Make some snapshots (from within Rstudio)
+  - Change the markdown file (or make a new one)
+  - Save the markdown (or other) file
+  - Stage/add the file
+  - Commit the file (with a useful commit message)
+  - Push the file to GitHub (have a look and check it's there)
+3. Merge the branch back into master when you're happy with it.
+4. Close the issue, and repeat.
+
+## Making changes on GitHub directly.
+1. Make a new branch on GitHub
+2. Edit the README
+3. Commit it on GitHub
+3. Pull from 
+
+>## Discussion
+>Discuss your experiences with each other (5 minutes)
+>If markdown, Rstudio, Version control, Git, and GitHub aren't on your concept map, add them and >try to find connections between them. (10 minutes)
+{: .discussion}
