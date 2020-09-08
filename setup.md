@@ -8,7 +8,8 @@ Setup
 ## Software and accounts
 
 Please sign up to the following **before the course**:
-1. [Open science framework](https://osf.io) - Web based service for sharing your work, providing time stamps for pre-registration, and is a preprint server. Please create an account, or log in with your ORCid if you have one. 
+1. We will be using [Zoom](https://zoom.us/download) for videoconferencing. Please download the client if you do not already have it downloaded 
+1. The [Open science framework](https://osf.io) is a web service for sharing your work, providing time stamps for pre-registration, and is a preprint server. Please create an account, or log in with your ORCid if you have one. 
 1. [Github](https://github.com/) - GitHub is a web-hosting and collaboration service based on Git version control. 
 1. Either **connect your GitHub account** to [RStudio.cloud](https://rstudio.cloud/) (recommended) OR follow the [local RStudio setup](#local-rstudio-setup) instructions. 
 
@@ -35,7 +36,10 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages)
 ```
 
-## Prerequistes
+#### (Optional) Windows users: connect Git Bash and RStudio
+If you are a Windows user, you may also want to connect Git Bash to RStudio. This will allow you type git commands in the RStudio terminal (in addition to using the version control buttons inside RStudio). To do so, open RStudio, choose Tools->Global Options-Terminal and ensure that you have git-bash chosen.
+
+## Prerequisites
 
 We expect you to have some familiarity with R before the course begins. If you aren't already familiar with R, we recommend [swirl](https://swirlstats.com/students.html), or [this Software Carpentry lesson](http://swcarpentry.github.io/r-novice-gapminder/).
 
@@ -50,3 +54,14 @@ swirl()
 # 1: R Programming: The basics of programming in R
 # 4: Exploratory Data Analysis: The basics of exploring data in R
 ```
+
+## Home setup tips
+In this workshop, you will be learning by "coding along" with the instructors. If you're working from home this means that you will need to have both the window for the tool you will be learning about (e.g. RStudio, or GitHub) and the window for the Zoom video conference client open. 
+
+In order to see both at once, we recommend using one of the following set up options:
+
+- **Two monitors**: If you have two monitors, plan to have your work following the instuctor on one monitor and the video conferencing software on the other.
+- **Two devices**: If you don't have two monitors, do you have another device (tablet, smartphone) with a medium to large sized screen? If so, try using the smaller device as your video conference connection and your larger device (laptop or desktop) to follow along with what instructor is doing.
+- **Divide your screen**: If you only have one device and one screen, practice having two windows (the video conference program and one of the tools you will be using at the workshop) open together. How can you best fit both on your screen? Will it work better for you to toggle between them using a keyboard shortcut? Try it out in advance to decide what will work best for you.
+
+This [blog post](https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/) includes detailed information on how to set up your screen to follow along during the workshop.
