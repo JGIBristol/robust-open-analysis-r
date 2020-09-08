@@ -7,7 +7,7 @@ This lesson aims to enable you to do your research analysis reproducibly, at eve
 
 This will:
 - help other people to reproduce your work, and to collaborate with you
-- help *you* to reproduce your own work (avoiding moments of terrror, e.g. "this code worked before", "what did I do to get that answer"?)
+- help *you* to reproduce your own work (avoiding moments of terror, e.g. "this code worked before", "what did I do to get that answer"?)
 - allow you to create shareable work at each stage of the process (leading to quicker feedback, and a more frequent sense of achievement).
 
 During the lesson, we introduce you to an example reproducible workflow using Git, GitHub, RStudio, and the Open Science Framework. The flowchart below is the workflow that you will complete during the course:
