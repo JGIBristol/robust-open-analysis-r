@@ -17,11 +17,11 @@ Natalie Thurlby - *Instructor*|Robert Arbon - *Instructor*|Jackie Thompson - *Or
 You can find these materials at: [`tinyurl.com/ROAR-website`](http://www.tinyurl.com/ROAR-website)
 <!--TODO: Check URL-->
 
-## Code of conduct
-Please take a moment to familiarise yourself with the code of conduct for today. Your instructors will talk you through the main points.
-
-## Setup
+### Setup
 Please take a minute to make sure that you have followed the instructions on the [setup](../setup.html) page.
+
+### Code of conduct
+Please take a moment to familiarise yourself with the code of conduct for today. Your instructors will talk you through the main points.
 
 ## Timings
 <!--TODO: fill in-->
