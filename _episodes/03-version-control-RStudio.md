@@ -112,7 +112,7 @@ These circles represent a snapshot of your files at a certain point of time. In 
 ### Branches
 Work processes are not always linear. We are likely to have different versions of our work, not only in time. One snapshot/commit can result in two different versions (for example by two different people, or two different parts of a project).
 
-![]({{ page.root }}/fig/git-tree.png)
+![](../fig/git-tree.png)
 Image by [Gonzalo Bulnes](https://gonzalo-bulnes.github.io/blog/gardening_with_git/context-from-scratch.html)
 
 ### The Staging area
