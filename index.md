@@ -15,6 +15,12 @@ During the lesson, we introduce you to an example reproducible workflow using Gi
 
 We don't aim to teach you any techniques for doing analysis (i.e. there is no statistics in this course). Instead, we aim to teach you a way to organise your work so that you can do your work with relative ease and efficiency, reducing errors and stress. 
 
+By the end of this course you will:
+* Be aware of reasons to work reproducibly.
+* Be able to write and publish RMarkdown documents mixing code and text.
+* Be familiar with using Git for version control in RStudio.
+* Have practiced setting up and using a reproducible workflow from start to finish.
+
 {% comment %} This is a comment in Liquid {% endcomment %}
 
 > ## Prerequisites
