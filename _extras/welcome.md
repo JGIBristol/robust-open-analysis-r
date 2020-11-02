@@ -2,7 +2,7 @@
 title: Welcome
 ---
 
-Welcome and house-keeping: ROAR workshop <!--TODO: date-->
+Welcome and house-keeping: ROAR workshop 11/11/2020
 =====================================================
 
 ## Instructors, organisers, and helpers
@@ -21,10 +21,20 @@ You can find these materials at: [`tinyurl.com/ROAR-website`](http://www.tinyurl
 Please take a minute to make sure that you have followed the instructions on the [setup](../setup.html) page.
 
 ### Code of conduct
-Please take a moment to familiarise yourself with the code of conduct for today. Your instructors will talk you through the main points.
+<!--TODO: Add a code of conduct page to extras-->
+Please take a moment to familiarise yourself with the [code of conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html) for today. 
 
-## Timings
-<!--TODO: fill in-->
+## Timings 11/11/2020
+
+|  Time | Description     |
+|---|---|
+| 9.00 - 9.25 |  Welcome   |
+| 9.25 - 9.55  |  Core Concepts in Reproducibility |
+| 10.00 - 10.45  |  Tour of RStudio  |
+| 11.15 - 12.00  |   RMarkdown  |
+| 12.00 - 13.00 |   Lunch   |
+| 13.00 - 14.45 |   Version control with Git and GitHub |
+| 15.15 - 17.00  |  Putting it all together  |
 
 ## Zoom house-keeping
 
