@@ -11,7 +11,7 @@ This will:
 - allow you to create shareable work at each stage of the process (leading to quicker feedback, and a more frequent sense of achievement).
 
 During the lesson, we introduce you to an example reproducible workflow using Git, GitHub, RStudio, and the Open Science Framework. The flowchart below is the workflow that you will complete during the course:
-![](fig/flowchart-full-sections.png)
+![](fig/workflow.png)
 
 We don't aim to teach you any techniques for doing analysis (i.e. there is no statistics in this course). Instead, we aim to teach you a way to organise your work so that you can do your work with relative ease and efficiency, reducing errors and stress. 
 
