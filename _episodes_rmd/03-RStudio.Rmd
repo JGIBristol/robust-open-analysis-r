@@ -1,6 +1,6 @@
 ---
 title: "The RStudio integrated development environment"
-teaching: 50
+teaching: 35
 exercises: 10
 questions:
  - "What is an Integrated Development Environment (IDE) and how can it make data analysis easier?"
@@ -15,22 +15,17 @@ source: Rmd
 There are two technologies essential to efficient,reproducible workflows:
 1. Integrated development environments (IDEs) and
 2. Literate programming
-
 This episode will describe the first of these with RStudio as its main example.  
-
-
-
-# Integrated development environments (IDEs)
 
 The goal of an IDE is to make coding and data analysis easier. 
 IDEs are often tailored to specific languages (or sets of languages) but there is a set of 
 features which are common to all.  These features are: 
 
-  * A project management system
-  * Language interpreter (and/or compiler)
-  * Debugger
-  * Version control
-  * Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
+1. A project management system
+2. Language interpreter (and/or compiler)
+3. Debugger
+4. Version control
+5. Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
   syntax highlighting, autocomplete...
 
 > ## Some useful IDEs
@@ -42,42 +37,51 @@ features which are common to all.  These features are:
 > 
 {: .callout}
 
-This episode will familiarise you with all the main features of `RStudio cloud`. These (mostly) map
-to the features of the desktop application `RStudio` which you may be familiar with. We will be 
-demonstrating the following features:
+This episode will familiarise you with all the main features of `RStudio cloud`. These (mostly) map to the features of the desktop application `RStudio local` which you may be familiar with. We will be demonstrating the following features:
+2. organising analysis into `Projects`;
+3. the panes for special features, such as keeping track of variables;
+3. tools for writing and running R code;
+5. finding and squashing bugs with the debugger. 
+The big feature not covered will version control, this will be covered in [episode 4]({{ page.root }}{% link _episodes/05-version-control-RStudio.md %}).
 
-2. Projects
-3. Running an R script
-4. Running commands in the console
-5. Debugging an R script 
+To help you get to grips with the main features, a useful cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf), and to learn about the many `RStudio cloud` features you should go to the online documentation [here](https://rstudio.cloud/learn). 
 
-While learning about these features we'll introduce a lot of the little features that make 
-working in an IDE worthwhile, and a future episode will cover version control. 
+# Analysis is organised in Projects
 
-A useful RStudio cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf). To learn about the many `RStudio cloud` features go to the online documentation [here](https://rstudio.cloud/learn).
+`Projects` keep track of settings tied to a particular data analysis project. When starting a new project you will create a new `RStudio project`. If you want to continue working on something,  just open up the `RStudio project` you want to work on a new project, just open up that project and continue where you left off. 
 
+In order open an existing project navigate to:
+1. `RStudio cloud`: your projects will be listed under `Your Workspace`
+2. `RStudio local`: the `[project_name].Rproj` file, either through RStudio (`File` > `Open Project...`) or through your system file manager
 
-## Project management
+## Setting up RStudio projects
 
-`Projects` keep track of settings tied to a particular data analysis project. When starting a new
-project you will create a new `RStudio project`. If you want to continue working on something, 
-just open up the `RStudio project`
-you want to work on a new project, just open up that project and continue where you left off. 
-In order open an existing project navigate to the `[project_name].Rproj` file, either through 
-RStudio (`File` > `Open Project...`) or through your system file manager. 
+You should already have a project called `roar` but just in case you haven't, complete either one of the exercises below, depending on whether you're using `RStudio local/cloud`. 
 
-A good about RStudio is `Projects`. Let's create one now. 
-
-> ## Create a new project
-> 1. Open RStudio
-> 2. Select `File` > `New Project` > `New Directory` > `New Project` 
-> 3. `Directory name`: "roar_workshop"
-> 4. `Create project as...`: Select a convenient directory
-> 5. Check the `Create a git repository` radio button
-> 6. Select `Create Project`
+> ## Create a new `RStudio cloud` project
+> 1. Navigate to [rstudio.cloud](rstudio.cloud)
+> 2. Navigate to the `Your Workspace` tab. 
+> 3. Click `New Project`
+> 4. Rename `Untitled Project` to `roar`. 
 {: .challenge}
 
+> ## Create a new `RStudio local` project
+> 1. Open RStudio
+> 2. Select `File` > `New Project` > `New Directory` > `New Project` 
+> 3. `Directory name`: "roar"
+> 4. `Create project as...`: Select a convenient directory
+> 5. Select `Create Project`
+{: .challenge}
 
+You'll also need to install the required packages so please run the following: 
+
+```r
+list.of.packages <- c("tidyverse", "data.table", "knitr", "markdown", "rmarkdown")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+```
+
+## RStudio layout can be customized
 
 Before we tour Rstudio let's make sure we've all configured our session the same way. 
 
@@ -89,23 +93,30 @@ Before we tour Rstudio let's make sure we've all configured our session the same
 >     2. Top left: `Source`
 >     3. Top right: `Environment`, `History`, `VCS`
 >     4. Bottom right: `Files`, `Plots`, `Packages`, `Help`, `Viewer`
+> 4. Select the `Terminal` tab. 
+> 4. Under `New terminals open with:` select `Bash`
 > 4. Select `OK`
 {: .challenge}
+
+There are lots of options in the `Global Options` and `Project Options` menus which allow you to customize your environment. Please spend five minutes browsing the headings to see what customizations are available. 
 
 > ## Global vs Project properties. 
 > Pane layout is a 'Global property', that is, it will persist across different RStudio sessions.  
 > There are project specific properties in the `Tools` > `Project options...` menu. Please  
-> have a look at them!
+> familiarise yourself with both sets of options. 
 {: .callout}
 
-Now look at `Files` pane (bottom right). You should see two files: 
+<!-- Now look at `Files` pane (bottom right). You should see: -->
+<!-- 1. `project.Rproj` (might be called `roar.Rproj` on `RStudio local`.) -->
+<!-- 2. `.Rhistory` -->
 
-1. `.gitignore` 
-2. `roar_workshop.Rproj` 
+<!-- The `Rproj` is a text file which contains all of the project  -->
+<!-- specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen -->
+<!-- the project.  -->
 
-Ignore the first one (for now). The `Rproj` is a text file which contains all of the project 
-specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen
-the project. 
+## Project files make analysis easier
+
+One of the main benefits of `Projects` is that 
 
 > ## Create a file, run, save, close and reopen
 > 1. Select `File` > `New File` > `New R Script` 
@@ -155,7 +166,7 @@ Now answer these questions:
 {: .callout}
 
 
-## Other RStudio features
+# Specilized panes have useful features
 
 Here are some other RStudio features which you should be aware of. The `Console` and `Files` panes,
 you should be already familiar with. 
@@ -202,6 +213,9 @@ The `Terminal` is the same as the console but for the `bash` language, try typin
 > {: .solution}
 {: .challenge}
 
+
+# RStudio has tools for easy code writing and running
+
 Two other great features are tab complete and multiline editing. 
 
 > ## Tab complete
@@ -219,7 +233,7 @@ Two other great features are tab complete and multiline editing.
 > 5. You should see 5 lots of 'I love R'. 
 {: .challenge}
 
-## Debugging
+# The debugger helps you find errors
 
 When you've got to this point, please let your instructor
 know as we'll go through the debugger together. 
@@ -229,217 +243,3 @@ know as we'll go through the debugger together.
 > Check out RStudio tutorials by clicking [here](https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE)
 {: .callout}
 
-# RMarkdown
-
-RMarkdown is a powerful way of presenting your analysis in a way that's easy to code and easy to 
-read. 
-
-This lesson will draw heavily from the following excellent resources:
-
-> ## RMarkdown further reading
-> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
-> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
-{: .callout}
-
-## What is it?
-
-**Markdown** is a simple language with minimal formatting features 
-that can be turned into HTML (i.e. webpages). i.e. write plain text and turn it into formatted text. 
-
-**RMarkdown** is a variant of Markdown which allows you to run code and print the output within the
-final document. It can be turned into HTML, pdfs and word documents as well. 
-
-## What's it good for?
-
-Consider your normal data analysis workflow. It's probably something like this:
-
-1. Do some data analysis. 
-2. Save plots in separate files and print results to screen or `.csv`. 
-2. Copy and paste results/charts into report.  
-
-If you need to update your analysis or data you have to painstakingly do 2- 3 again. In order to 
-reproduce the analysis you have to share the code *and* how you copied an pasted results into 
-the final report.
-
-With RMarkdown your workflow could be like this: 
-
-1. Write report in RMarkdown and insert analysis/numbers/charts where you need it. Then one-click to 
-publish. 
-
-If you need to update analysis, data, etc. Make changes and then one click to publish (again). 
-In order to reproduce the results just share the raw RMarkdown document. 
-
-An additional *major* benefit over writing documents in MS Word is that you can track changes with 
-version control, but more on that in episode 3. 
-
-RMarkdown can be used to author a wide variety of document types e.g. books, presentations,  journal 
-articles, websites, *this course*. 
-
-
-## RMarkdown file structure
-
-Create a new RMarkdown document by doing the following: 
-
-> ## Create an RMarkdown document
-> 1. Select `File` > `New File` > `R Markdown...`
-> 2. Select the  `Word` radio button. 
-> 3. Press `OK` when the `New RMarkdown` pane appears.  
-{: .challenge}
-
-RMarkdown requires some 'front matter' which is a collection of key/value pairs at the top of the 
-file which tells R how you want to process the output. The default front matter is : 
-
-~~~
-   ---
-   title: "Untitled"
-   author: "Rob Arbon"
-   date: "25/11/2019"
-   output: word_document
-   ---
-~~~
-{: .source}
-
-In order to create the final Word document you need to `knit` the document. This tells R to create 
-a document with the specified formatting and to run all the code and insert the relevant parts 
-into the document. The front matter above tells `R` to make a title ('Untitled')  and two subtitles 
-('Rob Arbon' and '25/11/2019') and create a Word document (as opposed to a PDF or a 
-web page). 
-
-> ## Knit your RMarkdown doc
-> 1. Click the `knit` button at the top of the RMarkdown document. 
-> 1. Save as 'test.Rmd'.
-> The Word document should pop up. If not search for it in a file browswer in the home directory
-> of the project. 
-{: .challenge}
-
-You can now proceed to insert your text and code.
-
-## Text syntax
-
-What follows is a non-comprehensive guide to Markdown syntax. 
-
-> hackmd.io 
-> If you want a real time feedback on what markdown looks like navigate to 
-> (hackmd.io)[hackmd.io] to try things out.  You'll need to scroll down to the bottom 
-> and click 'Use for free'.
-{: .callout}
-
-
-### Headings
-~~~
-    # Heading 1
-    ## Heading 2
-    ### Heading 3
-~~~
-{: .source}
-
-# Heading 1
-## Heading 2
-### Heading 3
-
-### Lists
-
-Note - actual numbers don't matter, just have a number and a period `.`
-~~~
-    1. Item 1
-    1. Item 2
-        1. sub Item 1
-        3. sub Item 2
-    2. Item 3
-~~~
-{: .source}
-
-1. Item 1
-1. Item 2
-    1. sub Item 1
-    3. sub Item 2
-2. Item 3
-
-### Bullets
-
-~~~
-    * Item 1
-    * Item 2
-        * sub Item 1
-        * sub Item 2
-    * Item 3
-~~~
-{: .source}
-
-* Item 1
-* Item 2
-    * sub Item 1
-    * sub Item 2
-* Item 3
-
-### Links
-
-~~~
-[link text](www.google.com)
-~~~~
-{: .source}
-
-[link text](www.google.com)
-
-### Images 
-
-~~~~
-![very good science caption](../fig/verygoodscience-hex.png)
-~~~
-{: .source}
-
-![very good science caption](../fig/verygoodscience-hex.png)
-
-## Code chunks
-
-You can also include code in code  and the output of code in 'code chunks'.
-
-````markdown
-`r ''````{r}
-x <- rnorm(2)
-
-for(i in 1:length(x)){
-  print(x[[i]])
-}
-```
-````
-
-You run the code by clicking the little triangle icon in the top right: 
-![code chunk](../fig/rmd_code_chunk.png)
-
-This prints the code and the result:
-```{r}
-x <- rnorm(2)
-
-for(i in 1:length(x)){
-  print(x[[i]])
-}
-```
-
-
-As you can tell from the example document we `knit`ed at the start you can also show plots:
-
-````markdown
-`r ''````{r}
-library(ggplot2)
-x <- rbeta(1000,5,2)
-y <- rbeta(1000,0.3, 0.3)
-ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
-}
-```
-````
-
-gives the following code and plot
-~~~
-library(ggplot2)
-x <- rbeta(1000,5,2)
-y <- rbeta(1000,0.3, 0.3)
-ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
-~~~
-{: .language-r}
-![beta correlation](../fig/beta_correlation.png)
-
-
-There's lots more that can be done with RMarkdown, please read the documentation to find out more. 
-You'll also have a chance to play around with it in episode 4. 

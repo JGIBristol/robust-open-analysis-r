@@ -28,11 +28,11 @@ The goal of an IDE is to make coding and data analysis easier.
 IDEs are often tailored to specific languages (or sets of languages) but there is a set of 
 features which are common to all.  These features are: 
 
-  * A project management system
-  * Language interpreter (and/or compiler)
-  * Debugger
-  * Version control
-  * Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
+1. A project management system
+2. Language interpreter (and/or compiler)
+3. Debugger
+4. Version control
+5. Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
   syntax highlighting, autocomplete...
 
 > ## Some useful IDEs
@@ -45,7 +45,7 @@ features which are common to all.  These features are:
 {: .callout}
 
 This episode will familiarise you with all the main features of `RStudio cloud`. These (mostly) map
-to the features of the desktop application `RStudio` which you may be familiar with. We will be 
+to the features of the desktop application `RStudio local` which you may be familiar with. We will be 
 demonstrating the following features:
 
 2. Projects
@@ -58,15 +58,17 @@ working in an IDE worthwhile, and a future episode will cover version control.
 
 A useful RStudio cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf). To learn about the many `RStudio cloud` features go to the online documentation [here](https://rstudio.cloud/learn).
 
-
-## Project management
+## Projects
 
 `Projects` keep track of settings tied to a particular data analysis project. When starting a new
 project you will create a new `RStudio project`. If you want to continue working on something, 
 just open up the `RStudio project`
 you want to work on a new project, just open up that project and continue where you left off. 
-In order open an existing project navigate to the `[project_name].Rproj` file, either through 
-RStudio (`File` > `Open Project...`) or through your system file manager. 
+
+In order open an existing project navigate to:
+
+1. `RStudio cloud`: your projects will be listed under `Your Workspace`
+2. `RStudio local`: the `[project_name].Rproj` file, either through RStudio (`File` > `Open Project...`) or through your system file manager
 
 A good about RStudio is `Projects`. Let's create one now. 
 
@@ -421,8 +423,8 @@ for(i in 1:length(x)){
 ```
 
 ```
-## [1] 0.8097412
-## [1] -0.1212683
+## [1] -0.9943496
+## [1] -0.850327
 ```
 
 
