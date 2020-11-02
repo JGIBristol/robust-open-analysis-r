@@ -12,6 +12,7 @@ FIXME: home page introduction
 > ## Prerequisites
 >
 > This lesson assumes some basic familiarity with R. 
+> See the prerequisites section of the [setup](setup.html#prerequisites) page for some recommended tutorials.
 {: .prereq}
 
 {% include links.md %}
