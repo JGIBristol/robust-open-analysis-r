@@ -1,5 +1,5 @@
 ---
-title: "Literate programming with RStudio cloud"
+title: "Literate programming with RMarkdown"
 teaching: 50
 exercises: 10
 questions:
