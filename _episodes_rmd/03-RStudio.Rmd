@@ -1,18 +1,13 @@
 ---
-title: "Literate programming with RMarkdown"
+title: "The RStudio integrated development environment"
 teaching: 50
 exercises: 10
 questions:
  - "What is an Integrated Development Environment (IDE) and how can it make data analysis easier?"
- - "What is literate programming and how can it be used for make reproducible analysis?"
 objectives: 
 - "Demonstrate the main features of RStudio for reproducible data anlysis."
-- "Demonstrate how RMarkdown can create reproducible analysis documents."
 keypoints: 
 - "IDEs such as RStudio make coding and data analysis easier and more reproducible."
-- "Literate programming combines text and code to make readable code and reproducible documents."
-- "RMarkdown fascilitates literate programming and produces good looking documents in a variety of 
- formats"
 source: Rmd
 ---
 
