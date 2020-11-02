@@ -31,9 +31,11 @@ Please take a moment to familiarise yourself with the [code of conduct](https://
 | 9.00 - 9.25 |  Welcome   |
 | 9.25 - 9.55  |  Core Concepts in Reproducibility |
 | 10.00 - 10.45  |  Tour of RStudio  |
+| 10.45 - 11.15 |   Break   |
 | 11.15 - 12.00  |   RMarkdown  |
 | 12.00 - 13.00 |   Lunch   |
 | 13.00 - 14.45 |   Version control with Git and GitHub |
+| 14.44 - 15.15 |   Break   |
 | 15.15 - 17.00  |  Putting it all together  |
 
 ## Zoom house-keeping
