@@ -86,7 +86,7 @@ a guide for future projects.
 From episode 2 you should have already created an RStudio project called `roar_workshop` and 
 initialized it as a `git` repository with a `.gitignore` file that ignores standard `R` and `RStudio`
 files. If you haven't done this, navigate to 
-[episode 2]({{ page.root }}{% link _episodes/02-RMarkdown.md %}) and follow the instructions there. 
+[episode 2]({{ page.root }}{% link _episodes/04-RMarkdown.md %}) and follow the instructions there. 
 
 ## Step 3
 > ## Create directory structure

@@ -129,7 +129,7 @@ print(total_wins/n_reps)
 ```
 
 ```
-## [1] 0.05011
+## [1] 0.05023
 ```
 
 > ## Challenge 1

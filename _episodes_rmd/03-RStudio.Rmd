@@ -1,50 +1,70 @@
 ---
-title: "Literate Programming with RMarkdown"
+title: "The RStudio integrated development environment"
 teaching: 50
 exercises: 10
 questions:
- - "What is an Integrated Development Environment (IDE) and how can it help me?"
- - "What is literate programming and how can it be used for improving reproducibility?"
+ - "What is an Integrated Development Environment (IDE) and how can it make data analysis easier?"
 objectives: 
-- "Show how RStudio can be used to improve your workflow."
-- "Explain how RMarkdown can create reproducible analysis documents."
+- "Demonstrate the main features of RStudio for reproducible data anlysis."
 keypoints: 
 - "IDEs such as RStudio make coding and data analysis easier and more reproducible."
-- "Literate programming combines text and code to make readable code and reproducible documents"
-- "RMarkdown fascilitates literate programming and produces good looking documents in a variety of 
- formats"
 source: Rmd
 ---
 
-In this episode we will explore two technologies essential to efficient, reproducible workflows:
-* Integrated development environments (IDEs) and
-* Literate programming
+# Introduction
+There are two technologies essential to efficient,reproducible workflows:
+1. Integrated development environments (IDEs) and
+2. Literate programming
+
+This episode will describe the first of these with RStudio as its main example.  
+
+
 
 # Integrated development environments (IDEs)
 
-The goal of an IDE is to make coding and, for RStudio in particular, data analysis easier. 
+The goal of an IDE is to make coding and data analysis easier. 
 IDEs are often tailored to specific languages (or sets of languages) but there is a set of 
-features which is common to all.  These features are: 
+features which are common to all.  These features are: 
 
-  * Project management
-  * Compiler or interpreter
+  * A project management system
+  * Language interpreter (and/or compiler)
   * Debugger
   * Version control
   * Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
   syntax highlighting, autocomplete...
 
-> ## Examples of IDEs
+> ## Some useful IDEs
 >
-> * For `R` there is [RStudio](https://www.rstudio.com/) 
+> * For `R` there is [RStudio](https://www.rstudio.com/) and [RStudio cloud](https://rstudio.cloud)
 > * For `Python` there is [PyCharm](https://www.jetbrains.com/pycharm/)
-> * For general purpose there is [Sublime Text](https://www.sublimetext.com/). 
-> * For data science applications the [Jupyter](http://jupyter.org/) project is powerful. 
+> * For general purpose there is [Visual Studio Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/). 
+> * For data science applications [Jupyter Lab](http://jupyter.org/) project is powerful. 
 > 
 {: .callout}
 
-From now on we will be referencing RStudio as our IDE of choice.
+This episode will familiarise you with all the main features of `RStudio cloud`. These (mostly) map
+to the features of the desktop application `RStudio` which you may be familiar with. We will be 
+demonstrating the following features:
+
+2. Projects
+3. Running an R script
+4. Running commands in the console
+5. Debugging an R script 
+
+While learning about these features we'll introduce a lot of the little features that make 
+working in an IDE worthwhile, and a future episode will cover version control. 
+
+A useful RStudio cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf). To learn about the many `RStudio cloud` features go to the online documentation [here](https://rstudio.cloud/learn).
+
 
 ## Project management
+
+`Projects` keep track of settings tied to a particular data analysis project. When starting a new
+project you will create a new `RStudio project`. If you want to continue working on something, 
+just open up the `RStudio project`
+you want to work on a new project, just open up that project and continue where you left off. 
+In order open an existing project navigate to the `[project_name].Rproj` file, either through 
+RStudio (`File` > `Open Project...`) or through your system file manager. 
 
 A good about RStudio is `Projects`. Let's create one now. 
 
@@ -57,10 +77,7 @@ A good about RStudio is `Projects`. Let's create one now.
 > 6. Select `Create Project`
 {: .challenge}
 
-`Projects` keep track of settings tied to a particular, er, project, that you're working on. When 
-you want to work on a new project, just open up that project and continue where you left off. 
-In order open an existing project navigate to the `[project_name].Rproj` file, either through 
-RStudio (`File` > `Open Project...`) or through your system file manager. 
+
 
 Before we tour Rstudio let's make sure we've all configured our session the same way. 
 
