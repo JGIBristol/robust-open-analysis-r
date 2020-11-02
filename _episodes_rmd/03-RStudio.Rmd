@@ -94,7 +94,7 @@ Before we tour Rstudio let's make sure we've all configured our session the same
 >     3. Top right: `Environment`, `History`, `VCS`
 >     4. Bottom right: `Files`, `Plots`, `Packages`, `Help`, `Viewer`
 > 4. Select the `Terminal` tab. 
-> 4. Under `New terminals open with:` select `Bash`
+> 4. Under `New terminals open with:` select `Bash` (or `Git Bash`)
 > 4. Select `OK`
 {: .challenge}
 

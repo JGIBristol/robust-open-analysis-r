@@ -1,6 +1,6 @@
 ---
 title: "Putting it all together"
-teaching: 10
+teaching: 45
 exercises: 50
 questions:
  - "How do RMarkdown, Git, and Open Science Framework work together for a data analysis?"
