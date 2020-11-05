@@ -10,7 +10,7 @@ You will need to set up software, accounts and R package installations ahead of 
 ## Software and accounts
 
 Please sign up to the following **before the course**:
-1. We will be using [Zoom](https://zoom.us/download) for videoconferencing. Please download the client if you do not already have it downloaded. Helpers will help you using Microsoft Teams, which you should be able to join in the browser if you prefer. 
+1. We will be using [Zoom](https://zoom.us/download) for videoconferencing. Please download the client if you do not already have it downloaded. 
 1. The [Open science framework](https://osf.io) is a web service for sharing your work, providing time stamps for pre-registration, and is a preprint server. Please create an account, or log in with your ORCid if you have one. 
 1. [Github](https://github.com/) - GitHub is a web-hosting and collaboration service based on Git version control.  Please create an account in advance.
 1. Either **connect your GitHub account** to [RStudio.cloud](https://rstudio.cloud/) (recommended) OR follow the [local RStudio setup](#local-rstudio-setup) instructions. 
