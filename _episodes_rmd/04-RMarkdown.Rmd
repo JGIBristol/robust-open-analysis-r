@@ -12,52 +12,53 @@ keypoints:
 source: Rmd
 ---
 
-# RMarkdown
+# Literate programming and RMarkdown
 
-RMarkdown is a powerful way of presenting your analysis in a way that's easy to code and easy to 
-read. 
+Let's start with the definition of literate programming (from [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)):
+
+*Literate programming is a programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.*
+
+RMarkdown is a method for performing literate programming and is a powerful way of presenting your analysis in a way that's easy to code and easy to read. 
 
 This lesson will draw heavily from the following excellent resources:
 
 > ## RMarkdown further reading
-> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
-> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+> These are all from the RStudio website:
+> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html) - An extensive tutorial
+> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) - A 5 page reference of commands and concepts. 
+> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) - A 2 page summary of the most important elements. 
 {: .callout}
 
-## What is it?
+## RMarkdown - what is it?
 
-**Markdown** is a simple language with minimal formatting features 
-that can be turned into HTML (i.e. webpages). i.e. write plain text and turn it into formatted text. 
+**Markdown** is a simple plain-text language that can be turned into formatted text, e.g., webpages, forum posts (stackexchange, Github) etc. 
 
-**RMarkdown** is a variant of Markdown which allows you to run code and print the output within the
-final document. It can be turned into HTML, pdfs and word documents as well. 
+**RMarkdown** is a variant of `Markdown` which allows you to incorporate code  within the
+final document. It can be turned into HTML, pdfs, word documents, books, theses etc. as well. 
+
+The Carpentries courses (i.e., this course) are written `RMarkdown`, or `Markdown`. 
 
 ## What's it good for?
 
 Consider your normal data analysis workflow. It's probably something like this:
 
-1. Do some data analysis. 
-2. Save plots in separate files and print results to screen or `.csv`. 
-2. Copy and paste results/charts into report.  
+1. Do some data analysis in an `R` script. Use comments to help reader understand. 
+2. Save plots, tables, etc. in separate files (`fig1.png`, `tab1.csv`, etc.). 
+2. Write report in Word and insert figures, tables etc. 
 
-If you need to update your analysis or data you have to painstakingly do 2- 3 again. In order to 
-reproduce the analysis you have to share the code *and* how you copied an pasted results into 
-the final report.
+*Updating/changing analysis*: Edit `R` scripts, Word document, insert figures, (change figure lables, `fig1.png`-> `fig2.png`). 
+*Sharing analysis*: Share data, R scripts, plots, tables, Word/Latex files. Also include how all the parts relate to each other in a README. 
 
-With RMarkdown your workflow could be like this: 
+With `RMarkdown` your workflow will be more like this: 
 
-1. Write report in RMarkdown and insert analysis/numbers/charts where you need it. Then one-click to 
-publish. 
+1. Do some data analysis in an `RMarkdown` file. All figures, tables are displayed in line - no need to save sepate files.  
+2. Write your report around the analysis in the `RMarkdown` file. The narrative of the analysis helps reader understand code.  
+3. One click to create Word/HTML/pdf report, or, one click to publish to the web (requires setup - not covered in this course).  
 
-If you need to update analysis, data, etc. Make changes and then one click to publish (again). 
-In order to reproduce the results just share the raw RMarkdown document. 
+*Updating/changing analysis*: Edit the single `RMarkdown` file. 
+*Sharing analysis*: Share data and `RMarkdown` file. 
 
-An additional *major* benefit over writing documents in MS Word is that you can track changes with 
-version control, but more on that in episode 3. 
-
-RMarkdown can be used to author a wide variety of document types e.g. books, presentations,  journal 
-articles, websites, *this course*. 
+An additional *major* benefit over writing documents in Word is that you can track changes with version control, but more on that in  [episode 4]({{ page.root }}{% link _episodes/05-version-control-RStudio.md %}). 
 
 
 ## RMarkdown file structure
