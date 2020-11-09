@@ -1,7 +1,7 @@
 ---
 title: "Literate programming with RMarkdown"
-teaching: 50
-exercises: 10
+teaching: 25
+exercises: 20
 questions:
  - "What is literate programming and how can it be used for make reproducible analysis?"
 objectives: 
@@ -12,320 +12,136 @@ keypoints:
 source: Rmd
 ---
 
-# Introduction
-In this episode we will explore two technologies essential to efficient, reproducible workflows:
-1. Integrated development environments (IDEs) and
-2. Literate programming
+
+![workflow](../fig/workflow_rmarkdown.png)
 
 
+# Literate programming and RMarkdown
 
-# Integrated development environments (IDEs)
+Let's start with the definition of literate programming (from [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)):
 
-The goal of an IDE is to make coding and data analysis easier. 
-IDEs are often tailored to specific languages (or sets of languages) but there is a set of 
-features which are common to all.  These features are: 
+*Literate programming is a programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.*
 
-  * A project management system
-  * Language interpreter (and/or compiler)
-  * Debugger
-  * Version control
-  * Lots of other *little* things e.g. file manager, interactive language console, bash terminal,
-  syntax highlighting, autocomplete...
-
-> ## Some useful IDEs
->
-> * For `R` there is [RStudio](https://www.rstudio.com/) and [RStudio cloud](https://rstudio.cloud)
-> * For `Python` there is [PyCharm](https://www.jetbrains.com/pycharm/)
-> * For general purpose there is [Visual Studio Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/). 
-> * For data science applications [Jupyter Lab](http://jupyter.org/) project is powerful. 
-> 
-{: .callout}
-
-This episode will familiarise you with all the main features of `RStudio cloud`. These (mostly) map
-to the features of the desktop application `RStudio` which you may be familiar with. We will be 
-demonstrating the following features:
-
-2. Projects
-3. Running an R script
-4. Running commands in the console
-5. Debugging an R script 
-
-While learning about these features we'll introduce a lot of the little features that make 
-working in an IDE worthwhile, and a future episode will cover version control. 
-
-A useful RStudio cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf). To learn about the many `RStudio cloud` features go to the online documentation [here](https://rstudio.cloud/learn).
-
-
-## Project management
-
-`Projects` keep track of settings tied to a particular data analysis project. When starting a new
-project you will create a new `RStudio project`. If you want to continue working on something, 
-just open up the `RStudio project`
-you want to work on a new project, just open up that project and continue where you left off. 
-In order open an existing project navigate to the `[project_name].Rproj` file, either through 
-RStudio (`File` > `Open Project...`) or through your system file manager. 
-
-A good about RStudio is `Projects`. Let's create one now. 
-
-> ## Create a new project
-> 1. Open RStudio
-> 2. Select `File` > `New Project` > `New Directory` > `New Project` 
-> 3. `Directory name`: "roar_workshop"
-> 4. `Create project as...`: Select a convenient directory
-> 5. Check the `Create a git repository` radio button
-> 6. Select `Create Project`
-{: .challenge}
-
-
-
-Before we tour Rstudio let's make sure we've all configured our session the same way. 
-
-> ## Rstudio set up
-> 1. Open `Tools` > `Global Options`
-> 2. Select the `Pane Layout` tab.  
-> 3. Configure your RStudio with the following layout: 
->     1. Bottom left: `Console` and `Terminal`
->     2. Top left: `Source`
->     3. Top right: `Environment`, `History`, `VCS`
->     4. Bottom right: `Files`, `Plots`, `Packages`, `Help`, `Viewer`
-> 4. Select `OK`
-{: .challenge}
-
-> ## Global vs Project properties. 
-> Pane layout is a 'Global property', that is, it will persist across different RStudio sessions.  
-> There are project specific properties in the `Tools` > `Project options...` menu. Please  
-> have a look at them!
-{: .callout}
-
-Now look at `Files` pane (bottom right). You should see two files: 
-
-1. `.gitignore` 
-2. `roar_workshop.Rproj` 
-
-Ignore the first one (for now). The `Rproj` is a text file which contains all of the project 
-specific settings. To see how `Projects` can benefit you we'll create some files, close and reopen
-the project. 
-
-> ## Create a file, run, save, close and reopen
-> 1. Select `File` > `New File` > `New R Script` 
-> 2. Write out the following in the file (or just copy and paste!): 
-> 2. ~~~
->    x <- rnorm(10)
->    
->    sum <- 0
->    
->    for(i in 1:length(x)){
->        sum <- sum + x[[i]]
->    }
->    
->    print(sum)    
->    ~~~
->    {: .language-r}
-> 3. Save the file as `test.R`
-> 4. `Source` the file so that it runs. 
-> 5. Observe the creation of the `sum` and `x` variables in the `Enivronment` pane (top right)
-> 6. Close and reopen RStudio (making sure to `save` your data on exit). Make sure you read the 
-> message!
-> 7. If RStudio doesn't open up to the same project, navigate to the project using the `Files` pane 
-> and clicking on the `test_project.Rproj` file.
-{: .challenge}
-
-Now answer these questions: 
-
-> ## History and data
-> You should now have two new files in your project. 
-> What is the `.RData` file?  Hint: clear objects from your `Environment` (the broom icon next to 
-> `Import Dataset`), then click on `.RData`. 
-> > ## Solution
-> > The `.RData` contains all your data! i.e. variables, functions, dataframes etc. in your 
-> > environment. 
-> {: .solution}
-> What does `.RHistory` file do? Hint: Just click on it. 
-> > ## Solution
-> > The `.RHistory` is a text file containing all your previous commands. 
-> {: .solution}
-{: .challenge}
-
-> ## When things go wrong
-> Sometimes your project session will become corrupted, or start doing unexpected things. 
-> The first thing to try when debugging is to remove your `.RData` file  from the project and 
-> and clear your environment. Then try doing whatever your trying to do again. 
-> Very often the cause lies within a dodgy object in the saved environment. 
-{: .callout}
-
-
-## Other RStudio features
-
-Here are some other RStudio features which you should be aware of. The `Console` and `Files` panes,
-you should be already familiar with. 
-
-The `Terminal` is the same as the console but for the `bash` language, try typing `pwd` 
-(`p`rint `w`orking `d`irectory) to see what it does. 
-
-`Packages` shows a list of all the packages you have installed. 
-
-`Help` is the help files for all installed packages. 
-
-`Git` we'll go through later (shout if you don't have this!)
-
-`Environment` and `History` are useful so we'll do those as questions: 
-
-> ## Environment 
-> The environment pane contains all the objects in your session, e.g. functions, variables, 
-> dataframes etc. There is more than one environment however, the default one shown is the 
-> `Global Environemt`.  Select the `package: datasets` environment.  What does it show?  What happens
-> if you click on an object there? 
-> > ## Solution
-> > It shows all the objects in the base R package `datasets`. If you click on an object it 
-> > opens the dataset. 
-> {: .solution}
-> Try loading an installed package e.g. by running `library(data.table)` in the console. 
-> Now open that environment and click
-> on a `Value` e.g. `chgroup` . What happens?
-> > ## Solution
-> > The code is printed in the console. 
-> {: .solution}
-{: .challenge}
-
-
-> ## History
-> The history pane shows you all the previous commands that have been run. 
-> Run the following command in the console: 
-> ~~~ 
-> y <- rbeta(10, 1, 2)
-> ~~~
-> {: .language-r}
-> Now use the History pane to transfer this (with one click) to the last line of `test.R`. 
-> > ## Solution
-> > Highlight the relevant line and then click `To Source`. 
-> {: .solution}
-{: .challenge}
-
-Two other great features are tab complete and multiline editing. 
-
-> ## Tab complete
-> To tab complete, try typing <kbd>r</kbd> in the `test.R` file on a new line. Now hit the tab key 
-> (<kbd>Tab</kbd>) and you should see a list come up full of functions, datasets and packages all 
-> starting with the letter <kbd>r</kbd>. 
-{: .challenge}
-
-> ## Multiline editing
-> This is very  useful for repetitive code or text. 
-> 1. Create 5 blank lines in `test.R`. 
-> 2. Click your curser to the top of those lines. 
-> 3. Hold down <kbd>Alt</kbd> and drag your curser down 5 lines. 
-> 4. Type 'I love R'. 
-> 5. You should see 5 lots of 'I love R'. 
-{: .challenge}
-
-## Debugging
-
-When you've got to this point, please let your instructor
-know as we'll go through the debugger together. 
-
-> ## Further reading
-> Mastering all the features of an IDE is time consuming but well worth it. 
-> Check out RStudio tutorials by clicking [here](https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE)
-{: .callout}
-
-# RMarkdown
-
-RMarkdown is a powerful way of presenting your analysis in a way that's easy to code and easy to 
-read. 
+RMarkdown is a method for performing literate programming and is a powerful way of presenting your analysis in a way that's easy to code and easy to read. The *"snippets of macros and traditional source code"* are your `R` analysis code. The *"explanation of the its logic in a natural language"* is your analysis report.  
 
 This lesson will draw heavily from the following excellent resources:
 
 > ## RMarkdown further reading
-> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html)
-> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
-> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+> These are all from the RStudio website:
+> * [Get Started with RMarkdown](https://rmarkdown.rstudio.com/lesson-1.html) - An extensive tutorial
+> * [Reference (pdf)](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) - A 5 page reference of commands and concepts. 
+> * [Cheatsheet (pdf)](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) - A 2 page summary of the most important elements. 
 {: .callout}
 
-## What is it?
+## RMarkdown - what is it?
 
-**Markdown** is a simple language with minimal formatting features 
-that can be turned into HTML (i.e. webpages). i.e. write plain text and turn it into formatted text. 
+**Markdown** is a simple plain-text language that can be turned into formatted text, e.g., webpages, forum posts (stackexchange, Github) etc. 
 
-**RMarkdown** is a variant of Markdown which allows you to run code and print the output within the
-final document. It can be turned into HTML, pdfs and word documents as well. 
+**RMarkdown** is a variant of `Markdown` which allows you to incorporate code  within the
+final document. It can be turned into HTML, pdfs, word documents, books, theses etc. as well. 
 
-## What's it good for?
+The Carpentries courses (i.e., this course) are written `RMarkdown` and `Markdown`. 
+
+## RMarkdown -  what's it good for?
 
 Consider your normal data analysis workflow. It's probably something like this:
 
-1. Do some data analysis. 
-2. Save plots in separate files and print results to screen or `.csv`. 
-2. Copy and paste results/charts into report.  
+#### 1. Conventional workflow
+1. Do some data analysis in an `R` script. Use comments to help reader understand. 
+2. Save plots, tables, etc. in separate files (`fig1.png`, `tab1.csv`, etc.). 
+2. Write report in Word and insert figures, tables etc. 
 
-If you need to update your analysis or data you have to painstakingly do 2- 3 again. In order to 
-reproduce the analysis you have to share the code *and* how you copied an pasted results into 
-the final report.
+*Updating/changing analysis*: Edit `R` scripts, Word document, insert figures, potentially change figure lables, `fig1.png`-> `fig2.png` etc..  
 
-With RMarkdown your workflow could be like this: 
+*Sharing analysis*: Share data, R scripts, plots, tables, Word/Latex files. Also include how all the parts relate to each other in a README. 
 
-1. Write report in RMarkdown and insert analysis/numbers/charts where you need it. Then one-click to 
-publish. 
+With `RMarkdown` your workflow will be more like this: 
 
-If you need to update analysis, data, etc. Make changes and then one click to publish (again). 
-In order to reproduce the results just share the raw RMarkdown document. 
+#### 2. Literate programming workflow
+1. Do some data analysis in an `RMarkdown` file. All figures, tables are displayed in line - no need to save sepate files.  
+2. Write your report around the code in the `RMarkdown` file. The narrative of the analysis helps the reader understand the code.  
+3. One-click to create formatted Word/HTML/pdf report, or, one-click to publish to the web (requires setup - not covered in this course).  
 
-An additional *major* benefit over writing documents in MS Word is that you can track changes with 
-version control, but more on that in episode 3. 
+*Updating/changing analysis*: Edit the single `RMarkdown` file and click to create report. 
 
-RMarkdown can be used to author a wide variety of document types e.g. books, presentations,  journal 
-articles, websites, *this course*. 
+*Sharing analysis*: Share data and the single `RMarkdown` file. 
+
+This difference can be seen in the figure below which shows two directory structures the top 
+with the conventional workflow, the bottom with the literate programming workflow. 
+
+![comparison](../fig/literate_vs_conventional.png)
+
+Of course for larger projects, you may have more than one `RMarkdown` file and you may have separate analysis scripts as well. An additional *major* benefit over writing documents in Word is that you can track changes with version control, but more on that in  [episode 4]({{ page.root }}{% link _episodes/05-version-control-RStudio.md %}). 
 
 
-## RMarkdown file structure
+## RMarkdown - quick start
 
-Create a new RMarkdown document by doing the following: 
+Let's create a quick-n-dirty RMarkdown document
 
-> ## Create an RMarkdown document
+> ## Create an RMarkdown file
 > 1. Select `File` > `New File` > `R Markdown...`
-> 2. Select the  `Word` radio button. 
-> 3. Press `OK` when the `New RMarkdown` pane appears.  
+> 2. `Title`: `Example Report`
+> 3. `Author`: [Your name]
+> 4. `Default Output Format`: `HTML`
+> 3. Click `OK` (not `Create Empty Document`).  
 {: .challenge}
 
-RMarkdown requires some 'front matter' which is a collection of key/value pairs at the top of the 
-file which tells R how you want to process the output. The default front matter is : 
-
+You should see in your code editing pane a `RMarkdown` file called `Untitled1` with the following at 
+the top: 
 ~~~
    ---
-   title: "Untitled"
+   title: "Example Report"
    author: "Rob Arbon"
    date: "25/11/2019"
-   output: word_document
+   output: html_document
    ---
 ~~~
 {: .source}
 
-In order to create the final Word document you need to `knit` the document. This tells R to create 
-a document with the specified formatting and to run all the code and insert the relevant parts 
-into the document. The front matter above tells `R` to make a title ('Untitled')  and two subtitles 
-('Rob Arbon' and '25/11/2019') and create a Word document (as opposed to a PDF or a 
-web page). 
+This is the 'front matter' - a collection of key/value pairs tells R how you want to process the output. The front matter is a powerful way of customising your document and you should consult the RStudio tutorial to find out more about this. The `RMarkdown` file needs to be saved and processed to create the final report, let's do this now. 
 
-> ## Knit your RMarkdown doc
-> 1. Click the `knit` button at the top of the RMarkdown document. 
-> 1. Save as 'test.Rmd'.
-> The Word document should pop up. If not search for it in a file browswer in the home directory
-> of the project. 
+> ## Save and process the report
+> 1. Select `File` > `Save`
+> 2. `File Name:` `example_report`
+> 3. Click the `Knit` button (you'll need to enable pop-ups in your Browser if you're using `RStudio cloud`)
+> 4. `RStudio cloud` the output will be in a new tabl 
+> 5. `RStudio local` the output will be in the `Viewer` pane. 
 {: .challenge}
 
-You can now proceed to insert your text and code.
+Before going on to explain RMarkdown, you should spend some time by yourself comparing the inputs
+outputs:
 
-## Text syntax
+> ## Compare inputs/outputs
+> Take a few minutes to read through the file `Example_report.Rmd` and look at the output
+> in a browser tab/`Viewer` pane. Answer these three questions: 
+> 1. What does `**` do to text? 
+> 2. How do you denote headings? 
+> 3. How do you insert code? 
+> 
+> > ## Solution
+> > 1. Makes text bold. 
+> > 2. With hashtags/octothorps/pound symbols: <kbd>#</kbd>. 
+> > 3. Inbetween three back apostrophes: <kbd>`</kbd>. 
+> {: .solution}
+{: .challenge}
 
-What follows is a non-comprehensive guide to Markdown syntax. 
 
-> hackmd.io 
-> If you want a real time feedback on what markdown looks like navigate to 
-> (hackmd.io)[hackmd.io] to try things out.  You'll need to scroll down to the bottom 
-> and click 'Use for free'.
+## RMarkdown - syntax
+
+
+> ## Real-time Markdown
+> It may be useful for you to learn Markdown (not RMarkdown) by seeing how the syntax translates into output in real time. To do this you should use `Hackmd`. 
+> 1. Navigate to [hackmd](https://hackmd.io/). 
+> 1. Sign up with your Github account. 
+> 2. Click on `New Note`
+> 3. Write `Markdown` on the left hand pane and see the output on the right hand pane. 
 {: .callout}
 
+What follows is a non-comprehensive guide to RMarkdown syntax. The `code` blocks show the RMarkdown syntax, and underneath is the output. Read through it and then you can proceed to the exercise at the end.  
 
 ### Headings
+
+#### Input
 ~~~
     # Heading 1
     ## Heading 2
@@ -333,21 +149,25 @@ What follows is a non-comprehensive guide to Markdown syntax.
 ~~~
 {: .source}
 
+#### Output
+
 # Heading 1
 ## Heading 2
 ### Heading 3
 
 ### Lists
-
-Note - actual numbers don't matter, just have a number and a period `.`
+Note - actual numbers don't matter, just have a number and a period `.` The sub-items have been indented by a tab space.  
+#### Input
 ~~~
     1. Item 1
     1. Item 2
-        1. sub Item 1
-        3. sub Item 2
+      1. sub Item 1
+      3. sub Item 2
     2. Item 3
 ~~~
 {: .source}
+
+#### Output
 
 1. Item 1
 1. Item 2
@@ -356,7 +176,7 @@ Note - actual numbers don't matter, just have a number and a period `.`
 2. Item 3
 
 ### Bullets
-
+#### Input
 ~~~
     * Item 1
     * Item 2
@@ -366,6 +186,7 @@ Note - actual numbers don't matter, just have a number and a period `.`
 ~~~
 {: .source}
 
+#### Output
 * Item 1
 * Item 2
     * sub Item 1
@@ -373,25 +194,30 @@ Note - actual numbers don't matter, just have a number and a period `.`
 * Item 3
 
 ### Links
-
+#### Input
 ~~~
 [link text](www.google.com)
 ~~~~
 {: .source}
 
+#### Output
 [link text](www.google.com)
 
 ### Images 
 
+#### Input
 ~~~~
 ![very good science caption](../fig/verygoodscience-hex.png)
 ~~~
 {: .source}
 
+#### Output
+
 ![very good science caption](../fig/verygoodscience-hex.png)
 
-## Code chunks
+### Code chunks
 
+#### Input
 You can also include code in code  and the output of code in 'code chunks'.
 
 ````markdown
@@ -407,6 +233,7 @@ for(i in 1:length(x)){
 You run the code by clicking the little triangle icon in the top right: 
 ![code chunk](../fig/rmd_code_chunk.png)
 
+#### Output
 This prints the code and the result:
 ```{r}
 x <- rnorm(2)
@@ -417,10 +244,13 @@ for(i in 1:length(x)){
 ```
 
 
+### Plots
+
 As you can tell from the example document we `knit`ed at the start you can also show plots:
 
+#### Input
 ````markdown
-`r ''````{r}
+```r ''`{r}
 library(ggplot2)
 x <- rbeta(1000,5,2)
 y <- rbeta(1000,0.3, 0.3)
@@ -428,6 +258,8 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 }
 ```
 ````
+
+#### Output
 
 gives the following code and plot
 ~~~
@@ -439,6 +271,47 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 {: .language-r}
 ![beta correlation](../fig/beta_correlation.png)
 
+### Inline code
 
-There's lots more that can be done with RMarkdown, please read the documentation to find out more. 
-You'll also have a chance to play around with it in episode 4. 
+You can also put code inline with text. 
+
+#### Input
+````markdown
+```r ''`{r}
+x <- rbeta(1000,5,2)
+```
+````
+
+The mean of the observations is `` `r knitr::inline_expr("mean(x)")` ``
+
+#### Output
+
+```{r}
+x <- rbeta(1000,5,2)
+```
+
+  
+The mean of the observations is `r mean(x)`. 
+
+
+## Exercise
+
+> ## Reproduce and extend an analysis. 
+> A small piece of exploratory analysis was done on the `Old Faithful` dataset. While it was done in `RMarkdown` only the a html document is available. You want to reproduce and update this analysis. 
+> 1. Download the zipped html report from [here](https://gist.github.com/RobertArbon/fc36253608346ddd35b91283bf4b8f73), extract it and open it in a browser. 
+> 1. Create a fresh RMarkdown document and reproduce the given report. You'll need to look at the cheat-sheet [here](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) and you can copy and paste chunks of text if you wish. 
+> 2. Add another section entitled 'Updated analysis' which makes the plot mentioned in the 'further work' section. Comment on the chart. 
+> 2. Knit to a pdf by selecting `Knit to pdf` from the `Knit` menu. How does the front matter change? 
+> 
+> > ## Solution
+> > The `RMarkdown` file used for the full analysis (including the 'Updated analysis')
+> > can be downloaded [here](https://gist.github.com/RobertArbon/51a6622ac67609e98fafc1f1b6b764ad). Download it and compare it to yours.
+> > In the front matter an additional `pdf_document` has been added as part of an indented list under `output`.  
+> {: .solution}
+{: .challenge}
+
+
+
+
+
+There's lots more that can be done with RMarkdown, please read go through the tutorial to find out more. You'll also have a chance to play around with it in [episode 6]({{ page.root }}{% link _episodes/06-putting-it-together.md %}). 
