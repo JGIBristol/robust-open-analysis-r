@@ -3,11 +3,12 @@ title: "Putting it all together"
 teaching: 45
 exercises: 50
 questions:
- - "How do RMarkdown, Git, and Open Science Framework work together for a data analysis?"
+ - "How do RMarkdown, Git, and Open Science Framework work together to produce a reproducible data analysis?"
 objectives: 
 - "To produce a simple example of a reproducible workflow"
 keypoints: 
-- "Open Science Framework (OSF) is a tool for organising projects and sharing them on the web"
+- "Open Science Framework (OSF) is a tool for organising  and preregistering projects and sharing them on the web"
+- "Rstudio, Rmarkdown, Git and Github can be combined to create reproducible data analysis workflow"
 source: Rmd
 ---
 
@@ -46,61 +47,78 @@ Make sure you're 'ignoring' pdfs in your `.gitignore` file.
 
 Commit and push this. 
 
-### Step 4: Preregister the analysis on OSF.
+### Step 4: Preregister the analysis on the Open Science Framework.
 
-We're now going to write down our analysis plan and pre-register a simple hypothesis. This will be 
+We're now going to write down our analysis plan and preregister a simple hypothesis. This will be 
 done in three steps: 
 
-1. Create Open Science Framework (OSF) project. 
-2. Write an analysis plan (a plan will be provided)
-3. Upload documents and pre-register project. 
+1. Create  an Open Science Framework (OSF) project. 
+2. Write an analysis plan (a plan will be provided). 
+3. Upload documents and preregister the project. 
 
-#### 1. Create OSF project
-1. Sign up, if you haven't already for an [osf](osf.io) account. 
-2. On the dashboard click `Create new project`. Call it 'Old Faithful' and `Go to project`. 
+#### 1. Create an OSF project
+1. Sign up, if you haven't already, for an [osf](osf.io) account. 
+2. On the dashboard click `Create new project`. Call it 'Old Faithful' and then `Go to project`. 
 
 #### 2. Create hypothesis and analysis plan
 Our hypothesis is: 
 
 *There are 2 distinct types of eruption from Old Faithful: 1) short frequent eruptions, 2) long infrequent eruptions.*
 
-We shall test it by clustering the data using a Gaussian mixture model (more information [here](https://brilliant.org/wiki/gaussian-mixture-model/)) with 1 and 2 components. The true number of components will be given by the model with the highest Integrated Complete Data Likelihood (ICL). 
-The model will be fit in the R package `RMixmod`. 
+We shall test it by clustering the data using a Gaussian mixture model (more information [here](https://brilliant.org/wiki/gaussian-mixture-model/)) with 1 and 2 components. The true number of components will be given by the model with the smallest Integrated Complete Data Likelihood (ICL) criterion. The model will be fit in the R package `RMixmod`. 
 
 (Don't worry if you don't understand this - all the materials will be provided!)
 
-1. Download the analysis plan [here]()
-2. `Knit` all the `Rmd` docs to pdfs. 
-3. Commit and push changes. 
-3. Upload both `analysis_plan.pdf` and `old_faithful_eda.pdf` documents  to the OSF project. 
+1. Download the analysis plan [here](https://gist.github.com/RobertArbon/a5e6758280082239ae71dfd68de365e9)
+2. Commit and push changes. 
+2. `Knit` both `analysis_plan.Rmd` and `old_faithful_eda.Rmd` files to pdfs. 
+3. Upload both `analysis_plan.pdf` and `old_faithful_eda.pdf` documents  to the OSF project. To do this navigate to `Files`, click on `OSF Storage (United States)`. The `Upload` button should appear and you can use this to upload files.  
 
 
-#### 3. Pre-register plan and project. 
+
+#### 3. Preregister plan and project. 
+The OSF instructions for registering projects can be found [here](https://help.osf.io/hc/en-us/articles/360019930893). Specific instructions for this project are given here: 
 3. Click `Registrations` > `New registration`
-4. 
+4. Select `Open-Ended Registration` and then select `Create draft`. 
+5. Fill in the required `Metadata`:. 
+    1. Description: *An investigation into the Old Faithful geyser*
+    2. License: `CC-By Attribution 4.0 International`. 
+    3. Subjects: `Physical Sciences and Mathematics`. 
+6. Click `Next` then fill in the `Summary`:
+    1. `Summary`: *The attached file analysis_plan.pdf contains our project description, hypothesis and analysis plan.* 
+    2. Select the `analysis_plan.pdf` document.
+7. Now click `Reveiw`. Review your submission and when you're satisfied click `Register`. 
+8. You can now click `Make registration public immediately` then `Submit`. 
+
+The registration is now pending approval by the administrators of the project (i.e., you). If you navigate back to the `Registrations` tab of the project and click on the link next to `Pending registration`, it will bring you to your registration page. This contains the information you entered when registering the project, as well as a snapshot of the project contents, i.e., analysis_plan.pdf and old_faithful_eda.pdf.
+
+You will get an email asking you to approve or cancel this preregistration. **You should cancel this preregistration after the course**.  
 
 ## Analysis and write
 
 ### Steps 5 and 6: Perform analysis and commit changes
 
-1. Download an report template from [here](). 
-2. Edit and run the analysis. 
-3. Commit and push changes. 
-4. Write your own conclusion from the analsis. 
-5. Commit and push. 
+1. Download the report template from [here](https://gist.github.com/RobertArbon/a0a9b71600c713db0f5b31b8712eb3b2). 
+2. You will need to install `Rmixmod`. You will be asked `Do you want to install from sources the package which needs compilation? (Yes/no/cancel)` - choose `no`. 
+2. Follow the instructions in the report template.  You should make a commit and push after every couple of completed tasks in the report template. i.e. you should commit and push multiple times. This is good practice. 
 
+A completed report is available [here](https://gist.github.com/RobertArbon/491ab16f9fa81b9056fbc5614a6db880) should you need help. 
 
 ## Publish PDF
 
 ### Step 7 and 8:
-
-1. `Knit` the `report.Rmd` to a pdf. 
+1. `Knit` the completed `report_template.Rmd` to a pdf. 
 2. Upload the pdf to the OSF project. 
 
+You have now successfully completed a fully reproducible piece of preregistered data analysis!
+
+Both the preregistration and the final analysis report are all publicly available on the OSF. 
+
+Your code is available for anyone to use from your Github profile. 
 
 # Conclusions
 
-That concludes the course. In this last episode we have brought together all the elements learned in the previous episodes and applied it to an example analysis of the Old Faithful dataset. We used RStudio to create an project ( [episode 2]({{ page.root }}{% link _episodes/03-RStudio.md %}) ) to contain our Old Faithful analysis. Then we performed some exploratory data analysis and wrote an analysis plan using RMarkdown [episode 3]({{ page.root }}{% link _episodes/04-RMarkdown.md %})). From [episode 1]({{ page.root }}{% link _episodes/01-core-concepts.md %}) we learnt about pre-registration and pre-registered our hypothesis with the OSF. We performed our intended analysis, backing along the way using version control ( [episode 6]({{ page.root }}{% link _episodes/04-version-control-RStudio.md %})). We then published our report on the OSF and because we used version control, our code was already published and available for use by others. 
+That concludes the course. In this last episode we have brought together all the elements learned in the previous episodes and applied it to an example analysis of the Old Faithful dataset. We used RStudio to create an project ( [episode 2]({{ page.root }}{% link _episodes/03-RStudio.md %}) ) to contain our Old Faithful analysis. Then we performed some exploratory data analysis and wrote an analysis plan using RMarkdown ( [episode 3]({{ page.root }}{% link _episodes/04-RMarkdown.md %})). From [episode 1]({{ page.root }}{% link _episodes/01-core-concepts.md %}) we learnt about preregistration and so we preregistered our hypothesis with the OSF. We performed our intended analysis, backing up along the way using version control ( [episode 6]({{ page.root }}{% link _episodes/05-version-control-RStudio.md %})). We then published our report, along with our pre-registered analysis plan, on the OSF. In addition, because we used version control, our code was already published and available for use by others on Github.  
 
 
 
@@ -119,7 +137,7 @@ That concludes the course. In this last episode we have brought together all the
 <!-- 1. **Storage**: it can store an unlimited amount of files, including raw data files,  -->
 <!-- accessibly and securely. Even if the Centre for Open Science (the owner of the OSF) go bust,  -->
 <!-- they have a fund to maintain the storage.  -->
-<!-- 2. **Preregistrations**: You can create an analysis plan and pre-register it with the OSF.   -->
+<!-- 2. **Preregistrations**: You can create an analysis plan and preregister it with the OSF.   -->
 <!-- 3. **Preprints**: OSF powers and integrates with many different pre-print servers.  -->
 <!-- 3. **Search functions**: Your profile links to all your projects and there is a search function which  -->
 <!-- makes your and other people's research findable.  -->
@@ -154,7 +172,7 @@ That concludes the course. In this last episode we have brought together all the
 <!--     1. **Files**: a page dedicated to managing your files.  -->
 <!--     2. **Wiki**: another link to the wiki editing page.  -->
 <!--     3. **Analytics**: see how many times your project has been accessed or your work downloaded.  -->
-<!--     5. **Registrations**:  Make a pre-registration or view an existing pre-registered plan.  -->
+<!--     5. **Registrations**:  Make a preregistration or view an existing preregistered plan.  -->
 <!--     5. **Contributors**: Manage the contributors to the project.  -->
 <!--     6. **Add-ons**: configure your add-ons and integrations such as Google Drive and Github.  -->
 <!--     7. **Settings**: Miscellaneous settings for the project, e.g. title, email notifications, metadata.  -->
