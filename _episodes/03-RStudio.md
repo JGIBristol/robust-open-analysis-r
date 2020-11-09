@@ -14,6 +14,8 @@ keypoints:
 source: Rmd
 ---
 
+![workflow](../fig/workflow_rstudio.png)
+
 # Introduction
 There are three technologies essential to efficient,reproducible workflows:
 1. Integrated development environments (IDEs),
@@ -91,11 +93,10 @@ if(length(new.packages)) install.packages(new.packages)
 You should also create the following directory structure which will help organise the material of 
 this course: 
 ```
-.
+roar
 /episode_2_rstudio
 /episode_3_rmd
 /episode_4_vcs
-/episode_5_summary
 ```
 
 Please put material from each episode into the relevant folder. 
@@ -225,7 +226,7 @@ Let's have some more practice with `Environment` and `History` with two short ex
 > Now open that environment and click
 > on the `Value`, `melt`. What happens?
 > > ## Solution
-> > The code is printed in the console. 
+> > The code is displayed in a new window pane. 
 > {: .solution}
 {: .challenge}
 

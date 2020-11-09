@@ -24,7 +24,7 @@ Let's start with the definition of literate programming (from [Wikipedia](https:
 
 *Literate programming is a programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.*
 
-RMarkdown is a method for performing literate programming and is a powerful way of presenting your analysis in a way that's easy to code and easy to read. The ``*snippets of macros and traditional source code*'' are your `R` analysis code. The ``*explanation of the its logic in a natural language* '' is your analysis report.  
+RMarkdown is a method for performing literate programming and is a powerful way of presenting your analysis in a way that's easy to code and easy to read. The *"snippets of macros and traditional source code"* are your `R` analysis code. The *"explanation of the its logic in a natural language"* is your analysis report.  
 
 This lesson will draw heavily from the following excellent resources:
 
@@ -100,7 +100,7 @@ the top:
 ~~~
 {: .source}
 
-This is the 'front matter' - a collection of key/value pairs tells R how you want to process the output - more on this later. The `RMarkdown` file needs to be saved and processed to create the final report, let's do this now. 
+This is the 'front matter' - a collection of key/value pairs tells R how you want to process the output. The front matter is a powerful way of customising your document and you should consult the RStudio tutorial to find out more about this. The `RMarkdown` file needs to be saved and processed to create the final report, let's do this now. 
 
 > ## Save and process the report
 > 1. Select `File` > `Save`
@@ -247,8 +247,8 @@ for(i in 1:length(x)){
 ```
 
 ```
-## [1] 1.003023
-## [1] 1.468163
+## [1] 0.3662334
+## [1] 0.0849497
 ```
 
 
@@ -299,8 +299,8 @@ The mean of the observations is `` `r mean(x)` ``
 x <- rbeta(1000,5,2)
 ```
 
-
-The mean of the observations is 0.7207387. 
+  
+The mean of the observations is 0.7182205. 
 
 
 ## Exercise
