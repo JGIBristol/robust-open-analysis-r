@@ -5,19 +5,20 @@ title: Setup
 Setup
 ===
 
+You will need to set up software, accounts and R package installations ahead of the lesson.
+
 ## Software and accounts
 
 Please sign up to the following **before the course**:
-1. We will be using [Zoom](https://zoom.us/download) for videoconferencing. Please download the client if you do not already have it downloaded 
+1. We will be using [Zoom](https://zoom.us/download) for videoconferencing. Please download the client if you do not already have it downloaded. 
 1. The [Open science framework](https://osf.io) is a web service for sharing your work, providing time stamps for pre-registration, and is a preprint server. Please create an account, or log in with your ORCid if you have one. 
-1. [Github](https://github.com/) - GitHub is a web-hosting and collaboration service based on Git version control. 
+1. [Github](https://github.com/) - GitHub is a web-hosting and collaboration service based on Git version control.  Please create an account in advance.
 1. Either **connect your GitHub account** to [RStudio.cloud](https://rstudio.cloud/) (recommended) OR follow the [local RStudio setup](#local-rstudio-setup) instructions. 
 
 ### Local RStudio setup
-If you would prefer to use your local copy of RStudio, you will need to install some software, and make sure that they are connected to one another. This may require you to get permission from your IT services department, so it is particularly important that you do this ahead of time. If you cannot make any part of this work before the session, then please sign up to [RStudio Cloud](https://rstudio.cloud) using your GitHub account instead.
+If you would prefer to use your local copy of RStudio, you will need to install some software, and make sure that they are connected to one another. This may require you to get permission from your IT services department, so it is particularly important that you do this ahead of time. **If you cannot make any part of these instructions work before the session, then please sign up to [RStudio Cloud](https://rstudio.cloud) using your GitHub account instead.**
 
 #### Installations
-
 You will need to install the following:
 1. [Git](https://git-scm.com/) - Version control software
 1. [R](https://www.r-project.org/) - The R programming language
@@ -26,21 +27,23 @@ You will need to install the following:
 #### Connecting Rstudio and Git
 We will be using Rstudio's integrated version control. In order to do this, you will need to make sure that Rstudio can find Git. The instructions [here](https://happygitwithr.com/rstudio-see-git.html) will help you check if this is already done, and how to set it up if necessary. You may have to upgrade your version of RStudio if you have an old version installed. 
 
-#### Packages in R
+#### (Optional) Windows users: connect Git Bash and RStudio
+If you are a Windows user, you may also want to connect Git Bash to RStudio. This will allow you type git commands in the RStudio terminal (in addition to using the version control buttons inside RStudio). To do so, open RStudio, choose `Tools > Global Options > Terminal` and ensure that you have git-bash chosen.
 
-Please install these packages in R before you begin. You can copy and paste the code into the R console and click 'yes' at the pop up window asking to restart R.  Please save your work before you do this.
+## Packages in R
+Whether you are using local RStudio or Rstudio.cloud, **please install these packages in R before you begin**. 
 
+1. Create a new project:
+  - In Rstudio.cloud, open Your Workspace and choose `New Project > New Project`. You will see a message saying "Deploying" and then a new RStudio project should open in the browser. At the top of the page click where it says "Untitled Project" and name your project "roar"
+  - *OR* open local Rstudio. Save any existing work, then choose `File > New Project > New Directory > New Project`, name your directory "roar" and click `Create Project` (don't tick the box to initialise a git repository as we'll do this later). Click 'yes' at the pop up window asking to restart R. 
+2. Install the following R packages, by coping and pasting the following into the console tab:
 ```r
 list.of.packages <- c("tidyverse", "data.table", "knitr", "markdown", "rmarkdown")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 ```
 
-#### (Optional) Windows users: connect Git Bash and RStudio
-If you are a Windows user, you may also want to connect Git Bash to RStudio. This will allow you type git commands in the RStudio terminal (in addition to using the version control buttons inside RStudio). To do so, open RStudio, choose Tools->Global Options-Terminal and ensure that you have git-bash chosen.
-
 ## Prerequisites
-
 We expect you to have some familiarity with R before the course begins. If you aren't already familiar with R, we recommend [swirl](https://swirlstats.com/students.html), or [this Software Carpentry lesson](http://swcarpentry.github.io/r-novice-gapminder/).
 
 Swirl is done interactively in the R terminal, some brief instructions are below:
