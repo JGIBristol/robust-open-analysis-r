@@ -85,6 +85,20 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages)
 ```
 
+## Course directory structure
+You should also create the following directory structure which will help organise the material of 
+this course: 
+```
+.
+/episode_2_rstudio
+/episode_3_rmd
+/episode_4_vcs
+/episode_5_summary
+```
+
+Please put material from each episode into the relevant folder. 
+
+
 ## RStudio layout can be customized
 
 RStudio is organised into four panes each with a series of tabs. Their layout can be customized in the global options menu. To introduce this menu let's make sure we've all configured our session the same way. 
@@ -143,7 +157,7 @@ Let's investigate this with an exercise:
 >    savehistory()
 >    ~~~
 >    {: .language-r}
-> 3. Save the file as `test.R`
+> 3. Save the file as `start_again.R`
 > 4. `Source` the file so that it runs. 
 > 5. Observe the creation of the `sum` and `x` variables in the `Enivronment` pane (top right)
 > 6. `RStudio cloud`: Log out and reopen RStudio.
@@ -222,9 +236,9 @@ So the `Environment` shows all the environments that are available to you. This 
 > y <- rbeta(10, 1, 2)
 > ~~~
 > {: .language-r}
-> Now use the History pane to transfer this (with one click) to the last line of `test.R`. 
+> Now use the History pane to transfer this (with one click) to the last line of `start_again.R`. 
 > > ## Solution
-> > Highlight the relevant line and then click `To Source`. 
+> > Highlight the relevant line and then click `To Source`. Make sure your curser is on a new line.   
 > {: .solution}
 {: .challenge}
 
@@ -239,23 +253,23 @@ Other great features are:
 
 > ## Tab complete
 > To explore tab complete, try the following: 
-> 1. Type `y <- r` in the `test.R` file on a new line. 
+> 1. Type `z <- r` in the `start_again.R` file on a new line. 
 > 2. Now hit the tab key (<kbd>Tab</kbd>) and you should see a list come up full of functions, datasets and packages all starting with the letter <kbd>r</kbd>. 
 > 3. Now type <kbd>u</kbd> and you should see the menu change. 
 > 4. Use the curser or your arrow keys to highlight `runif` and hit <kbd>Tab</kbd> again.
-> 5. You should have `y <- runif()` automatically typed out. 
+> 5. You should have `z <- runif()` automatically typed out. 
 > 6. With the curser inbetween the parenthses, hit <kbd>Tab</kbd> again. 
 > 7. A list of the required function arguments are shown (next to purple slanted rectangles) and other variables (yellow slanted rectangles). 
-> 8. Make sure the `n = ` is highlighted and hit enter <kbd>Enter</kbd>, type `10`, your line should now look like `y <- runit(n=10)`. 
+> 8. Make sure the `n = ` is highlighted and hit enter <kbd>Enter</kbd>, type `10`, your line should now look like `z <- runit(n=10)`. 
 > 9. Fill in the remaining function arguments with `min=1` and `max=2` using tab complete (you'll need to put the <kbd>,</kbd> separating the aguments in yourself). 
 {: .challenge}
 
 > ## Multiline editing
 > This is very  useful for repetitive code or text. 
-> 1. Create 5 blank lines in `test.R`. 
+> 1. Create 5 blank lines in `start_again.R`. 
 > 2. Click your curser to the top of those lines. 
 > 3. Hold down <kbd>Alt</kbd> and drag your curser down 5 lines. 
-> 4. Type 'I love R'. Click <kbd>Esc</kbd> to stop multiline editing. 
+> 4. Type `# I love R`. (You'll need the # so it is a comment). Click <kbd>Esc</kbd> to stop multiline editing. 
 > 5. You should see 5 lots of 'I love R'. 
 {: .challenge}
 
@@ -272,7 +286,16 @@ Other great features are:
 >     {: .language-r}
 > 4. Save file. 
 > 5. Run it using `Source with echo`. 
-> 6. Switch to the console and save the image by typing `save.image(file='semicircle.png')`
+> 6. Switch to the console and save the image by typing `save.image(file='episode_2_rstudio/semicircle.png')`
+> 
+> > ## Solution
+> > 1. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>
+> > 2. <kbd>Ctrl</kbd>+<kbd>s</kbd>
+> > 3. Use tab complete as per the previous challenge. 
+> > 4. <kbd>Ctrl</kbd>+<kbd>s</kbd>
+> > 5. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>
+> > 6. <kbd>Ctrl</kbd>+<kbd>2</kbd>
+> {: .solution}
 {: .challenge}
 
 # The debugger helps you find errors

@@ -119,6 +119,7 @@ outputs:
 > 1. What does `**` do to text? 
 > 2. How do you denote headings? 
 > 3. How do you insert code? 
+> 
 > > ## Solution
 > > 1. Makes text bold. 
 > > 2. With hashtags/octothorps/pound symbols: <kbd>#</kbd>. 
@@ -141,6 +142,8 @@ outputs:
 What follows is a non-comprehensive guide to RMarkdown syntax. The `code` blocks show the RMarkdown syntax, and underneath is the output. Read through it and then you can proceed to the exercise at the end.  
 
 ### Headings
+
+#### Input
 ~~~
     # Heading 1
     ## Heading 2
@@ -148,13 +151,15 @@ What follows is a non-comprehensive guide to RMarkdown syntax. The `code` blocks
 ~~~
 {: .source}
 
+#### Output
+
 # Heading 1
 ## Heading 2
 ### Heading 3
 
 ### Lists
-
 Note - actual numbers don't matter, just have a number and a period `.` The sub-items have been indented by a tab space.  
+#### Input
 ~~~
     1. Item 1
     1. Item 2
@@ -164,6 +169,8 @@ Note - actual numbers don't matter, just have a number and a period `.` The sub-
 ~~~
 {: .source}
 
+#### Output
+
 1. Item 1
 1. Item 2
     1. sub Item 1
@@ -171,7 +178,7 @@ Note - actual numbers don't matter, just have a number and a period `.` The sub-
 2. Item 3
 
 ### Bullets
-
+#### Input
 ~~~
     * Item 1
     * Item 2
@@ -181,6 +188,7 @@ Note - actual numbers don't matter, just have a number and a period `.` The sub-
 ~~~
 {: .source}
 
+#### Output
 * Item 1
 * Item 2
     * sub Item 1
@@ -188,25 +196,30 @@ Note - actual numbers don't matter, just have a number and a period `.` The sub-
 * Item 3
 
 ### Links
-
+#### Input
 ~~~
 [link text](www.google.com)
 ~~~~
 {: .source}
 
+#### Output
 [link text](www.google.com)
 
 ### Images 
 
+#### Input
 ~~~~
 ![very good science caption](../fig/verygoodscience-hex.png)
 ~~~
 {: .source}
+
+#### Output
 
 ![very good science caption](../fig/verygoodscience-hex.png)
 
 ### Code chunks
 
+#### Input
 You can also include code in code  and the output of code in 'code chunks'.
 
 ````markdown
@@ -222,6 +235,7 @@ for(i in 1:length(x)){
 You run the code by clicking the little triangle icon in the top right: 
 ![code chunk](../fig/rmd_code_chunk.png)
 
+#### Output
 This prints the code and the result:
 
 ```r
@@ -233,15 +247,18 @@ for(i in 1:length(x)){
 ```
 
 ```
-## [1] 0.01056498
-## [1] 0.9195714
+## [1] 1.003023
+## [1] 1.468163
 ```
 
 
+### Plots
+
 As you can tell from the example document we `knit`ed at the start you can also show plots:
 
+#### Input
 ````markdown
-```{r}
+```r ''`{r}
 library(ggplot2)
 x <- rbeta(1000,5,2)
 y <- rbeta(1000,0.3, 0.3)
@@ -249,6 +266,8 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 }
 ```
 ````
+
+#### Output
 
 gives the following code and plot
 ~~~
@@ -260,17 +279,43 @@ ggplot(data.frame(x,y), aes(x=x, y=y)) + geom_point()
 {: .language-r}
 ![beta correlation](../fig/beta_correlation.png)
 
+### Inline code
+
+You can also put code inline with text. 
+
+#### Input
+````markdown
+```r ''`{r}
+x <- rbeta(1000,5,2)
+```
+````
+
+The mean of the observations is `` `r mean(x)` ``
+
+#### Output
+
+
+```r
+x <- rbeta(1000,5,2)
+```
+
+
+The mean of the observations is 0.7207387. 
+
+
 ## Exercise
 
 > ## Reproduce and extend an analysis. 
-> A small piece of analysis was done on the `Old Faithful` dataset. While it was done in `RMarkdown` only the pdf is available. You want to reproduce and extend this analysis. 
-> 1. Download the pdf report from [here](). 
+> A small piece of exploratory analysis was done on the `Old Faithful` dataset. While it was done in `RMarkdown` only the a html document is available. You want to reproduce and update this analysis. 
+> 1. Download the zipped html report from [here](https://gist.github.com/RobertArbon/fc36253608346ddd35b91283bf4b8f73), extract it and open it in a browser. 
 > 1. Create a fresh RMarkdown document and reproduce the given report. You'll need to look at the cheat-sheet [here](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) and you can copy and paste chunks of text if you wish. 
-> 2. Add another section entitled 'Extended analysis' which makes the plot mentioned in the 'further work' section. 
+> 2. Add another section entitled 'Updated analysis' which makes the plot mentioned in the 'further work' section. Comment on the chart. 
+> 2. Knit to a pdf by selecting `Knit to pdf` from the `Knit` menu. How does the front matter change? 
 > 
 > > ## Solution
-> > The `RMarkdown` file used for the full analysis (including the 'Extended analysis')
-> > can be downloaded [here](). Download it and compare it to yours.
+> > The `RMarkdown` file used for the full analysis (including the 'Updated analysis')
+> > can be downloaded [here](https://gist.github.com/RobertArbon/51a6622ac67609e98fafc1f1b6b764ad). Download it and compare it to yours.
+> > In the front matter an additional `pdf_document` has been added as part of an indented list under `output`.  
 > {: .solution}
 {: .challenge}
 
