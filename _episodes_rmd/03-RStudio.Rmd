@@ -300,7 +300,10 @@ Other great features are:
 {: .challenge}
 
 # The debugger helps you find errors
-
+Debugging is essential when you anything more than a few simple lines of code. 
+You can find a summary of RStudio debugging tools [here](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#introduction). 
+This link also contains links to more advanced tutorials. 
+             
 When you've got to this point, please let your instructor
 know (`Zoom` green tick or green Post-It note) as we'll go through the debugger together. 
 
