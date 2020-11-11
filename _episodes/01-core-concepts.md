@@ -16,9 +16,8 @@ objectives:
 - "Be aware of the tools and practices that are used in your area of research and how they may contribute to the reproducibility crisis."
 keypoints:
 - "We can't assume that published research would have the same result if someone else performed it, but there are ways of increasing trust in research."
-- "Make your data and analysis Finable, Accessible, Interoperable and Reusable"
-- "Use simulations to test unintuitive statistics."
-- "Get in touch with statisticians, or software engineers if you need support. Use ask-JGI, ask-RSE, and the statistics clinic."
+- "Make your data and analysis Findable, Accessible, Interoperable and Reusable"
+- "Ask for help if you need support: research software engineers, your statistics department."
 source: Rmd
 ---
 
@@ -87,9 +86,9 @@ If data is messy, unlabelled, in a strange file format, or only on your hard dri
 There are lots of points in the process of doing research where something can go wrong, but lots of high profile examples (leading to retractions) come down to:
 1. Data storage mistakes, e.g. accidentally deleting columns of excel files, or rewriting important values.
 2. Data analysis implementation mistakes, e.g. accidentally clicking through a GUI in the wrong order, or code not doing what you think it does.
-3. Questionable research practices, e.g. p-hacking.
+3. Questionable research practices, e.g. p-hacking and HARKing
 
-### P-hacking
+### P-hacking 
 P-hacking is a catch-all term for making p-values appear smaller than they are. It includes practices like:
 - Collecting samples until your sample size gives you p < 0.05
 - Choosing different statistical tests until you get p<0.05
@@ -97,6 +96,13 @@ P-hacking is a catch-all term for making p-values appear smaller than they are. 
 
 P-curves show evidence that this is occurring in research, particularly when p-values are close to 0.05.
 ![p-curves show evidence of p-hacking in research](../fig/p-curve.jpg)
+
+### HARKing
+HARKing stands for "Hypothesising After Results are Known".
+
+The [xkcd jellybean comic](https://xkcd.com/882/) illustrates it well:
+![HARKing](../fig/jellybean_xkcd.jpg)
+
 
 > ## Discussion: Barriers to reproducibility in your field.
 > We've mentioned some barriers to reproducibility so far. In small groups, first write down  the issues you remember on the paper in front of you in one colour.
@@ -151,13 +157,13 @@ Version control is a system for avoiding these problems.
 
 ![](../fig/feynman.jpg)
 
-Pre-registering your analysis is saying what analysis you are going to do in advance, including:
+If you are doing hypothesis-confirming research, consider pre-registering your analysis is saying what analysis you are going to do in advance, including:
 * which variables you are going to look at
 * what sample size you will aim for
 * what you will exclude from your sample
 * what variables you are going to correct for
 
-__Pre-registration is only for analyses where you are seeking to confirm a hypothesis__
+This prevents you from accidentally trying out more hypothesis than you meant to, and shows other people that you didn't.
 
 ### [Registered reports](https://cos.io/rr/)
 
@@ -169,14 +175,43 @@ Extra great for research(ers) because:
 
 ![](../fig/reg_reports.jpg)
 
-## Draw a "concept map" about reproducibility
+> ## Discussion: how do these core concepts of reproducibility relate to our workflow today?
+> In small groups, looking at our workflow for today, try to list which of the following reproducibility problems are being prevented during each step of the workflow:
+>
+> Data or code being unFAIR (findable, accessible, interoperable, and reusable - which of these is it?)
+>
+> Data storage mistakes (e.g. deleting rows of spreadsheets)
+>
+> Data analysis mistakes (e.g. you didn't do what you meant to do)
+>
+> Questionable research practices (e.g. p-hacking)
+>
+> > ## Suggestions
+> > 1. Accessible and Reusable data and code (well-organised)
+> > 2. Prevents data analysis mistakes
+> > 3. Findable code
+> > 4. Prevents questionable research practices
+> > 5. Accessible and Reusable code
+> > 6. Prevents data analysis mistakes
+> > 7 + 8. Findable and Accessible results, prevents data analysis mistakes.
+> {: .solution}
+{: .challenge}
 
-> ## Concept map activity
-> 1. Create concept maps in small groups  (10 minutes)
-> 2. Feed back to the group 
->
-> We already have some of the barriers to reproducibility written down (e.g. publication bias, p-hacking), so add to this by writing some of the solutions to the reproducibility crisis to your paper e.g.: pre-registration. If you'd like to you can add more specific things that you have heard of (e.g. the Open Science Framework).
->
-> Then draw relationships between them, for example:
-> * pre-registration --prevents--> p-hacking
-{: .discussion}
+## Five selfish reasons to work reproducibly
+We do want to trust science, and to do good work, and to not waste people's time, and all of the other selfless reasons to work reproducibly, but there are also good selfish reasons to do so:
+1. Reproducibility helps to avoid disaster
+2. Reproducibility makes it easier to write papers/your thesis
+3. Reproducibility helps reviewers see it your way
+4. Reproducibility enables continuity of your work
+5. Reproducibility helps to build your reputation
+
+These reasons are taken from [Florian Markowetz's paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7).
+
+## Additional benefits of working "Openly"
+In addition to making sure that science is working (being reproducible), this workflow is about working Openly. What I mean by that in this context, is sharing your plans, code, results, etc, as you go through the process, and not just at the end. 
+
+So, on top of the selfish benefits of working reproducibly working Openly is also beneficial for:
+- Your career (papers with preprints get more citations)
+- Your networks (other people will see your work more)
+- (Anecdotally) your enjoyment of research: it is way less lonely, and you get to finish things way more often.
+
