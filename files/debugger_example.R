@@ -7,12 +7,17 @@
 # While in the debug mode you can inspect your code and the variables to better understand what's going on. 
                                                                                                                                         
 # This code doesn't give me the correct answer.  I'm trying to create z-scores of long list of numbers. 
-# From prior information I know the mean must be zero. 
-# But plotting them give shows one of them is less than zero. Let's find out why.  
+# But plotting them give shows one of them is clearly wrong. Let's find out why.  
 
-df <- read.csv(file='files/estimates.csv')
+
+# Create erroneous data
+estimates <- runif(100)
+estimates[[3]] <- -999
+df <- data.frame(x=estimates)
+
+# do analysis
 sd <- sd(df$x)
-mean <- 0
+mean <- mean(df$x)
 
 z_score <- function(est, mean, sd){
   diff <- est-mean
