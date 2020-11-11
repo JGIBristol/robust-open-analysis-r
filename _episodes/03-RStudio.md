@@ -302,9 +302,44 @@ Other great features are:
 {: .challenge}
 
 # The debugger helps you find errors
-
+Debugging is essential when you anything more than a few simple lines of code. 
+You can find a summary of RStudio debugging tools [here](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio#introduction). 
+This link also contains links to more advanced tutorials. 
+             
 When you've got to this point, please let your instructor
 know (`Zoom` green tick or green Post-It note) as we'll go through the debugger together. 
+
+You'll need to have the following code in a new R script: 
+
+````markdown
+```{r}
+# Create erroneous data
+estimates <- runif(100)
+estimates[[3]] <- -999
+df <- data.frame(x=estimates)
+
+# do analysis
+sd <- sd(df$x)
+mean <- mean(df$x)
+
+z_score <- function(est, mean, sd){
+  diff <- est-mean
+  z <- diff/sd
+  return(z)
+}
+
+
+z_scores <- vector(length=dim(df)[1])
+for (i in 1:dim(df)[1]){
+  # browser()
+  est <- df$x[[i]]
+  z <-  z_score(est, mean, sd)
+  z_scores[[i]] <- z
+}
+
+hist(z_scores)
+```
+````
 
 > ## Further reading
 > Mastering all the features of an IDE is time consuming but well worth it. 

@@ -233,7 +233,7 @@ Problems that GitHub solves:
 > 1. Login to [GitHub](http://www.GitHub.com)
 > 2. Go to `Repositories` > `New` and create an empty repository called "roar_workshop".
 > 3. Choose the HTTPS tab, then copy the first line of code ONLY for pushing an existing repository from the command line, and paste it into your RStudio terminal, e.g. ```git remote add origin https://github.com/YOURUSERNAME/roar_workshop.git```. This tells Git that you are adding a new remote place where you want to keep track of your Git repository.
-4. Type ```git push --mirror``` into your RStudio terminal. This will "push" your local code to GitHub and "mirror" the branch structure. You will need to put in your username and password. To check that it has worked, refresh your GitHub page and you should see that your code is now in both places!
+4. Type ```git push -u --mirror``` into your RStudio terminal. This will "push" your local code to GitHub and "mirror" the branch structure. You will need to put in your username and password. To check that it has worked, refresh your GitHub page and you should see that your code is now in both places!
 {: .challenge}
 
 > ## HTTPS or SSH
