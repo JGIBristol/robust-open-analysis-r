@@ -107,9 +107,9 @@ P-curves show evidence that this is occurring in research, particularly when p-v
 ### Make data available
 By making your data available, you can ensure that you and others will be able to replicate your work. This can involve:
 - Making your original data freely available
-- Storing your original data in a secure place (e.g. [data.bris](https://data.bris.ac.uk/data/) using the Data Access Committee), and only sharing it with people who meet ethical research standards.
-- You can make anonymised or aggregated data available.
-- You can synthesise data which is similar to your original data, but does not contain any real subjects, and make that available.
+- Storing your original data in a secure place and only sharing it with people who meet ethical research standards.
+- Making anonymised or aggregated data available.
+- Synthesising data which is similar to your original data, but does not contain any real subjects, and make that available.
 
 Whatever you make available, it must be well labelled and described if it's going to be useful for future you, or for others.
 
