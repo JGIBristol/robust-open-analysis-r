@@ -2,7 +2,7 @@
 title: Welcome
 ---
 
-Welcome and house-keeping: ROAR workshop 11/11/2020
+Welcome and house-keeping: ROAR workshop 24/02/2021
 =====================================================
 
 ## Instructors, organisers, and helpers
