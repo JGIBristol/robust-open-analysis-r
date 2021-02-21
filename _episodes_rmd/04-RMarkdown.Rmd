@@ -314,4 +314,4 @@ The mean of the observations is `r mean(x)`.
 
 
 
-There's lots more that can be done with RMarkdown, please read go through the tutorial to find out more. You'll also have a chance to play around with it in [episode 6]({{ page.root }}{% link _episodes/06-putting-it-together.md %}). 
+There's lots more that can be done with RMarkdown, please read go through the tutorial to find out more. You'll also have a chance to play around with it in [episode 5]({{ page.root }}{% link _episodes/06-putting-it-together.md %}). 

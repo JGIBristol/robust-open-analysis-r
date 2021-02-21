@@ -247,8 +247,8 @@ for(i in 1:length(x)){
 ```
 
 ```
-## [1] 0.3662334
-## [1] 0.0849497
+## [1] -0.6116017
+## [1] 0.6593419
 ```
 
 
@@ -300,7 +300,7 @@ x <- rbeta(1000,5,2)
 ```
 
   
-The mean of the observations is 0.7182205. 
+The mean of the observations is 0.7192117. 
 
 
 ## Exercise
@@ -323,4 +323,4 @@ The mean of the observations is 0.7182205.
 
 
 
-There's lots more that can be done with RMarkdown, please read go through the tutorial to find out more. You'll also have a chance to play around with it in [episode 6]({{ page.root }}{% link _episodes/06-putting-it-together.md %}). 
+There's lots more that can be done with RMarkdown, please read go through the tutorial to find out more. You'll also have a chance to play around with it in [episode 5]({{ page.root }}{% link _episodes/06-putting-it-together.md %}). 
