@@ -250,7 +250,9 @@ This feature of `History` is particularly useful - you can use it to iteratively
 Other great features are:
 1. tab complete, 
 2. multiline editing,
-3. keyboard shortcuts.
+3. keyboard shortcuts. 
+
+Note: the keyboard shortcuts won't work in `RStudio Cloud` as they clash with your browser shortcuts. 
 
 > ## Tab complete
 > To explore tab complete, try the following: 
