@@ -9,21 +9,22 @@ teaching: 20
 exercises: 10
 questions:
 - "What is the reproducibility crisis?"
-- "What are the key problems for reproducible research?"
+- "How can working Openly and reproducibly help me?"
+- "What are the key reasons for irreproducible research?"
 - "How can we solve these key problems in our research?"
 objectives:
 - "Have an overview of issues surrounding the reproducibility crisis and current ways to avoid those pitfalls."
 - "Be aware of the tools and practices that are used in your area of research and how they may contribute to the reproducibility crisis."
 keypoints:
-- "We can't assume that published research would have the same result if someone else performed it, but there are ways of increasing trust in research."
-- "Make your data and analysis Findable, Accessible, Interoperable and Reusable"
-- "Ask for help if you need support: research software engineers, your statistics department."
+- "The results of published research don't always reproduce."
+- "Make your data and analysis FAIR (Findable, Accessible, Interoperable and Reusable); as apen as possible, and as closed as necessary"
+- "Ask for help if you need statistics or software support: research software engineers, your statistics department."
 source: Rmd
 ---
 
 ## Motivation
 Today we're going to be building towards a reproducible and open work-flow for research
-![Psychology Replication Results](../fig/workflow.png)
+![Workflow](../fig/workflow.png)
 I'd like to begin by letting you know why it's important and exactly which problems we're trying to solve with this work flow.
 
 It's important that we can trust the results of research because we rely on those results to inform us. We make policies and laws, and choose which avenues of our own research to explore. If research is untrustworthy, that could result in anything from wasting time and money, to causing a PhD student distress, or even costing lives (by influencing policy or drug availability for example).
@@ -40,7 +41,7 @@ The matrix below (from [The Turing Way](https://the-turing-way.netlify.com/)) gi
 * Results are __robust__ if we get the same result when we do the research again using different analysis, on the same data.
 * Results are __generalisable__ if we get the same result when we do the research again using a different analysis, on different (newly collected) data.
 
->##Discussion
+> ## Discussion
 > In pairs discuss the following.
 >
 > How often do you think:
@@ -48,7 +49,7 @@ The matrix below (from [The Turing Way](https://the-turing-way.netlify.com/)) gi
 > 2. research in your area would be replicable, if you had access to the exact data and analyses?
 > 3. research in your area provides access to the exact data and analyses?
 >__(3 minutes total)__
-{: discussion}
+{: .discussion}
 
 ## The reproducibility crisis
 The reproducibility crisis is a recent event in science, where scientific results were found to replicate much less than scientists had assumed or hoped that they would.
@@ -76,7 +77,7 @@ Of the 1576 scientists surveyed, __over 70% of scientists surveyed have experien
 It used to be harder to share and access data and analyses. FAIR principles describe how data/analyses need to be stored in order for them to be used by others:
 
 - **Findable**: People need to know the data exists (e.g. link to in your paper)
-- **Accessible**: Data needs to be available in a format that humans and computers can understand (e.g. downloadable on the internet, and well-documented)
+- **Accessible**: Data and analysis should be as open as possible and as closed as necessary. They should be available in a format that humans and computers can understand (e.g. downloadable on the internet, and well-documented)
 - **Interoperable**: The data needs to be in a format that people usually use.
 - **Reusable**: Data must be clearly licensed so people know if they're allowed to reuse them.
 
@@ -177,7 +178,7 @@ Extra great for research(ers) because:
 
 > ## Discussion: how do these core concepts of reproducibility relate to our workflow today?
 > In small groups, looking at our workflow for today, try to list which of the following reproducibility problems are being prevented during each step of the workflow:
->
+> ![Workflow](../fig/workflow.png)
 > Data or code being unFAIR (findable, accessible, interoperable, and reusable - which of these is it?)
 >
 > Data storage mistakes (e.g. deleting rows of spreadsheets)
@@ -187,13 +188,13 @@ Extra great for research(ers) because:
 > Questionable research practices (e.g. p-hacking)
 >
 > > ## Suggestions
-> > 1. Accessible and Reusable data and code (well-organised)
+> > 1. FAIR (Accessible and Reusable) data and code (well-organised)
 > > 2. Prevents data analysis mistakes
-> > 3. Findable code
+> > 3. FAIR (Findable) code
 > > 4. Prevents questionable research practices
-> > 5. Accessible and Reusable code
+> > 5. FAIR (Accessible and Reusable) code
 > > 6. Prevents data analysis mistakes
-> > 7 + 8. Findable and Accessible results, prevents data analysis mistakes.
+> > 7 + 8. FAIR (Findable and Accessible) results, prevents data analysis mistakes.
 > {: .solution}
 {: .challenge}
 
@@ -211,7 +212,7 @@ These reasons are taken from [Florian Markowetz's paper](https://genomebiology.b
 In addition to making sure that science is working (being reproducible), this workflow is about working Openly. What I mean by that in this context, is sharing your plans, code, results, etc, as you go through the process, and not just at the end. 
 
 So, on top of the selfish benefits of working reproducibly working Openly is also beneficial for:
-- Your career (papers with preprints get more citations)
+- Your citation count (papers with preprints get more citations)
 - Your networks (other people will see your work more)
-- (Anecdotally) your enjoyment of research: it is way less lonely, and you get to finish things way more often.
+- (Anecdotally) your enjoyment of research: it is way less lonely, and you get the dopamine rush of finishing something and getting it out there way more often.
 
