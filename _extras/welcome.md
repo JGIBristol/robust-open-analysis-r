@@ -24,7 +24,7 @@ Please take a minute to make sure that you have followed the instructions on the
 <!--TODO: Add a code of conduct page to extras-->
 Please take a moment to familiarise yourself with the [code of conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html) for today. 
 
-## Timings 11/11/2020
+## Timings 24/02/2020
 
 |  Time | Description     |
 |---|---|

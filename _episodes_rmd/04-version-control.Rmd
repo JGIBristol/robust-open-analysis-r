@@ -31,13 +31,13 @@ When you set up a project with Git and GitHub, you can choose to set up Git firs
 
 We've chosen to set up Git first, since:
 1. This is likely to be what you need to do with your own research, e.g. if you have some existing code that you need to move to Git/GitHub
-2. It makes sense to explain GitHub first before we move on to GitHub.
+2. It makes sense to explain Git first before we move on to GitHub.
 
 ## Why use Version Control?
 Version Control is a way of keeping multiple versions of a file.
 
 A simple example of version control would be "undo" functionality (for example in Word). This saves different versions of your document every couple of seconds, and allows you to go back to previous versions. We can all agree that "undo" is very useful(!), but it has limitations:
-- It's only easy to get back to recent versions.
+- It's only easy to get back to recent versions (you have to go through in order).
 - It can only save so many versions.
 - The versions aren't labelled or organised.
 - It only allows you to access your versions (not your collaborators).
@@ -53,7 +53,7 @@ Google Docs has versioning functionality that solves some of these problems (for
 Version control helps you to avoid all of these problems:
 * I have come up with my own (confusing) naming conventions to make sure I have every possible version of my work, and I can't tell which is which 2 weeks later.
 * This code used to work, but I changed something and now it doesn't
-* I can’t remember how I made this file/graph - it doesn’t do the same thing any more
+* I can’t remember how I made this file/graph - the code doesn’t do the same thing any more.
 * When I work on my code/document, it means that I have to break the "clean" version for a time
 * I had to spend all my money on extra hard drives to store the 8,329 copies of my thesis.
 

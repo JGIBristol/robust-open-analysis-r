@@ -48,7 +48,7 @@ This episode will familiarise you with all the main features of `RStudio cloud`.
 3. tools for writing and running R code;
 5. finding and squashing bugs with the debugger. 
 
-The big feature not covered is version control, this will be covered in [episode 4]({{ page.root }}{% link _episodes/05-version-control-RStudio.md %}).
+The big feature not covered is version control, this will be covered in [episode 4]({{ page.root }}{% link _episodes/04-version-control.md %}).
 
 To help you get to grips with the main features, a useful `RStudio` cheat-sheet can be found [here](https://rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf), and to learn about the many `RStudio cloud` features you should go to the online documentation [here](https://rstudio.cloud/learn). 
 
