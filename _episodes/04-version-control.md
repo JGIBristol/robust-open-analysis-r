@@ -310,5 +310,9 @@ We will look at [The Turing Way](https://github.com/alan-turing-institute/the-tu
 3. Repeat 2 A-E until you're done.
 4. Do a pull request to bring the branch back into master when you're happy with it.
 
+## (Optional) Getting back to an earlier version
+
+FIXME
+
 ----
 These materials build on the [git novice Carpentries materials](http://swcarpentry.github.io/git-novice/01-basics/index.html) and [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-workflow.html).
