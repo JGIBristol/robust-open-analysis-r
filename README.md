@@ -3,7 +3,7 @@
 
 This repository contains the contents of the Robust and Open Analysis in R lesson (previously [Best Practices in Data Analysis]()), which is currently in-development for being developed into [The Carpentries](https://carpentries.org/) format.
 
-You can view the deployed lesson resources [here](https://jean-golding-institute.github.io/robust-open-analysis-r/). 
+You can view the deployed lesson resources [here](https://jgibristol.github.io/robust-open-analysis-r/). 
 
 ## Information for workshop participants
 ### Super-important links
@@ -18,7 +18,7 @@ You shouldn't need the slides in the workshop (as all of the information is also
 
 ### Set-up instructions
 
-Please check out the [set-up instructions](https://jean-golding-institute.github.io/robust-open-analysis-r/setup.html)!
+Please check out the [set-up instructions](https://jgibristol.github.io/robust-open-analysis-r/setup.html)!
 
 If you're having trouble getting Git and Rstudio to talk, then use [Rstudio Cloud](https://rstudio.cloud) and login with your GitHub username. 
 
@@ -31,7 +31,7 @@ We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTR
 the [more detailed guidelines][lesson-example] on proper formatting, ways to render the lesson locally, and even
 how to write new episodes.
 
-Please see the current list of [issues](https://github.com/Jean-Golding-Institute/robust-open-analysis-r/issues) for ideas for contributing to this
+Please see the current list of [issues](https://github.com/JGIBristol/robust-open-analysis-r/issues) for ideas for contributing to this
 repository. For making your contribution, we use the GitHub flow, which is
 nicely explained in the chapter [Contributing to a Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro Git
 by Scott Chacon.
